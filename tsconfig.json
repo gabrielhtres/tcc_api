@@ -1,6 +1,10 @@
 {
     "compilerOptions": {
-        "outDir": ".dist",
+        "target": "es6",
+        "module": "commonjs",
+        "outDir": "dist",
+        "rootDir": "src",
+        "esModuleInterop": true,
         "strict": true
     },
     "files": ["src/index.ts"]
