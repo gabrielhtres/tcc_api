@@ -3,7 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  output = "../src/generated/client"
+  // output = "../generated/client"
 }
 
 datasource db {
@@ -11,9 +11,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// model Teste {
-//   id        Int      @id @default(autoincrement())
-//   createdAt DateTime @default(now())
-//   email     String   @unique
-//   name      String
-// }
+model Teste {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  email     String   @unique
+  name      String
+}
