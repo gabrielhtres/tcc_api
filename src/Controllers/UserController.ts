@@ -19,15 +19,22 @@ export class UserController {
 
     async create(req: Request, res: Response) {
         try {
-            // console.log('req.body', req.body);
-
             const userData = req.body;
             const user = await this.userRepository.create(userData);
+            res.json(user).status(201);
+        } catch (error) {
+            res.status(500).json({ message: 'Failed to create user', error });
+        }
+    }
+
+    async update(req: Request, res: Response) {
+        try {
+            const { id } = req.params;
+            const userData = req.body;
+            const user = await this.userRepository.update(Number(id), userData);
             res.json(user);
         } catch (error) {
-            // console.log('error', error);
-
-            res.status(500).json({ message: 'Failed to create user', error });
+            res.status(500).json({ message: 'Failed to update user' });
         }
     }
 }

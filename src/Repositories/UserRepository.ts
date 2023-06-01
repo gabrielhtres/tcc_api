@@ -16,8 +16,6 @@ export class UserRepository {
     }
 
     async create(userData: User): Promise<User> {
-        console.log('userData', userData);
-
         const user = await prisma.user.findFirst({
             where: { email: userData.email, cpf: userData.cpf },
         });
