@@ -12,61 +12,73 @@ datasource db {
 }
 
 model User {
-  id        Int           @id @default(autoincrement()) @db.Integer
-  name      String
-  cpf       String        @unique @db.VarChar(11)
-  email     String        @unique
-  phone     String        @db.VarChar(12)
-  password  String
-  analyzes   Analysis[]
-  logs      Log[]
-  createdAt DateTime      @default(now()) @db.Timestamptz()
-  // updatedAt DateTime @default(now()) @db.Timestamptz()
+  id          Int        @id @default(autoincrement()) @db.Integer
+  name        String
+  cpf         String     @unique @db.VarChar(11)
+  email       String     @unique
+  phone       String     @db.VarChar(12)
+  isAdmin     Int        @default(0) @db.Integer
+  password    String
+  analyzes    Analysis[]
+  logs        Log[]
+  createdAt   DateTime   @default(now()) @db.Timestamptz()
+  updatedAt   DateTime   @default(now()) @db.Timestamptz()
 }
 
 model Analysis {
   id           Int      @id @default(autoincrement()) @db.Integer
   name         String
-  description  String
+  description  String?
   user         User     @relation(fields: [userId], references: [id])
   userId       Int      @map("user_id") @db.Integer
+  plot         Plot[]
   createdAt    DateTime @default(now()) @db.Timestamptz() @map("created_at")
-  phases       Phase[]
-  // updatedAt DateTime @default(now()) @db.Timestamptz()
+  updatedAt    DateTime @default(now()) @db.Timestamptz()
 }
 
-model Phase {
-  id           Int      @id @default(autoincrement()) @db.Integer
+model Plot {
+  id          Int      @id @default(autoincrement()) @db.Integer
   name        String
-  description String
+  description String?
+  xCoordinate Float    @map("x_coordinate") @db.DoublePrecision
+  yCoordinate Float    @map("y_coordinate") @db.DoublePrecision
   analysis    Analysis @relation(fields: [analysisId], references: [id])
   analysisId  Int      @map("analysis_id") @db.Integer
-  images      Image[]
-  createdAt   DateTime  @default(now()) @db.Timestamptz()
-}
-
-model Image {
-  id          Int      @id @default(autoincrement()) @db.Integer
-  link        String
-  phase       Phase?    @relation(fields: [phaseId], references: [id])
-  phaseId     Int?      @map("phase_id") @db.Integer
-  scale       Scale?    @relation(fields: [scaleId], references: [id])
-  scaleId     Int?      @map("scale_id") @db.Integer
+  phase       Phase[]
   createdAt   DateTime @default(now()) @db.Timestamptz()
 }
 
-// model ScaleImage {
-//   id          Int      @id @default(autoincrement()) @db.Integer
-//   link        String
-//   scale       Scale    @relation(fields: [scaleId], references: [id])
-//   scaleId     Int      @map("scale_id") @db.Integer
-//   createdAt   DateTime @default(now()) @db.Timestamptz()
-// }
+model Phase {
+  id          Int      @id @default(autoincrement()) @db.Integer
+  name        String
+  description String?
+  plot        Plot     @relation(fields: [plotId], references: [id])
+  plotId      Int      @map("plot_id") @db.Integer
+  images      PhaseImage[]
+  createdAt   DateTime @default(now()) @db.Timestamptz()
+}
+
+model PhaseImage {
+  id          Int      @id @default(autoincrement()) @db.Integer
+  link        String
+  phase       Phase    @relation(fields: [phaseId], references: [id])
+  phaseId     Int      @map("phase_id") @db.Integer
+  createdAt   DateTime @default(now()) @db.Timestamptz()
+}
 
 model Scale {
   id          Int      @id @default(autoincrement()) @db.Integer
   name        String
-  images      Image[]
+  description String?
+  images      ScaleImage[]
+  createdAt   DateTime @default(now()) @db.Timestamptz()
+}
+
+model ScaleImage {
+  id          Int      @id @default(autoincrement()) @db.Integer
+  link        String
+  scale       Scale    @relation(fields: [scaleId], references: [id])
+  scaleId     Int      @map("scale_id") @db.Integer
   createdAt   DateTime @default(now()) @db.Timestamptz()
 }
 
@@ -75,7 +87,7 @@ model Log {
   method      String
   route       String
   payload     String
-  user        User    @relation(fields: [userId], references: [id])
-  userId      Int     @map("user_id") @db.Integer
+  user        User     @relation(fields: [userId], references: [id])
+  userId      Int      @map("user_id") @db.Integer
   createdAt   DateTime @default(now()) @db.Timestamptz()
 }
