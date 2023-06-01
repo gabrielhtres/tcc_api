@@ -20,8 +20,10 @@ model User {
   password  String
   analyzes   Analysis[]
   logs      Log[]
-  createdAt DateTime      @default(now()) @db.Timestamptz()
+  createdAt DateTime      @default(now()) @db.Timestamptz() @map("created_at")
   // updatedAt DateTime @default(now()) @db.Timestamptz()
+
+  @@map("users")
 }
 
 model Analysis {
@@ -33,6 +35,8 @@ model Analysis {
   createdAt    DateTime @default(now()) @db.Timestamptz() @map("created_at")
   phases       Phase[]
   // updatedAt DateTime @default(now()) @db.Timestamptz()
+
+  @@map("analysis")
 }
 
 model Phase {
@@ -42,7 +46,18 @@ model Phase {
   analysis    Analysis @relation(fields: [analysisId], references: [id])
   analysisId  Int      @map("analysis_id") @db.Integer
   images      Image[]
-  createdAt   DateTime  @default(now()) @db.Timestamptz()
+  createdAt   DateTime  @default(now()) @db.Timestamptz() @map("created_at")
+
+  @@map("phases")
+}
+
+model Scale {
+  id          Int      @id @default(autoincrement()) @db.Integer
+  name        String
+  images      Image[]
+  createdAt   DateTime @default(now()) @db.Timestamptz() @map("created_at")
+
+  @@map("scales")
 }
 
 model Image {
@@ -52,22 +67,9 @@ model Image {
   phaseId     Int?      @map("phase_id") @db.Integer
   scale       Scale?    @relation(fields: [scaleId], references: [id])
   scaleId     Int?      @map("scale_id") @db.Integer
-  createdAt   DateTime @default(now()) @db.Timestamptz()
-}
+  createdAt   DateTime @default(now()) @db.Timestamptz() @map("created_at")
 
-// model ScaleImage {
-//   id          Int      @id @default(autoincrement()) @db.Integer
-//   link        String
-//   scale       Scale    @relation(fields: [scaleId], references: [id])
-//   scaleId     Int      @map("scale_id") @db.Integer
-//   createdAt   DateTime @default(now()) @db.Timestamptz()
-// }
-
-model Scale {
-  id          Int      @id @default(autoincrement()) @db.Integer
-  name        String
-  images      Image[]
-  createdAt   DateTime @default(now()) @db.Timestamptz()
+  @@map("images")
 }
 
 model Log {
@@ -77,5 +79,7 @@ model Log {
   payload     String
   user        User    @relation(fields: [userId], references: [id])
   userId      Int     @map("user_id") @db.Integer
-  createdAt   DateTime @default(now()) @db.Timestamptz()
+  createdAt   DateTime @default(now()) @db.Timestamptz() @map("created_at")
+
+  @@map("logs")
 }
