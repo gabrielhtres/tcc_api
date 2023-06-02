@@ -25,6 +25,8 @@ model User {
   jwtRefresh String?    @map("jwt_refresh")
   createdAt  DateTime   @default(now()) @db.Timestamptz()
   updatedAt  DateTime   @default(now()) @db.Timestamptz()
+
+  @@map("users")
 }
 
 model Analysis {
@@ -36,6 +38,8 @@ model Analysis {
   plot        Plot[]
   createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz()
   updatedAt   DateTime @default(now()) @db.Timestamptz()
+
+  @@map("analyzes")
 }
 
 model Plot {
@@ -48,6 +52,8 @@ model Plot {
   analysisId  Int       @map("analysis_id") @db.Integer
   disease     Disease[]
   createdAt   DateTime  @default(now()) @db.Timestamptz()
+
+  @@map("plots")
 }
 
 model Disease {
@@ -57,6 +63,8 @@ model Disease {
   plotId    Int      @map("plot_id") @db.Integer
   phases    Phase[]
   createdAt DateTime @default(now()) @db.Timestamptz()
+
+  @@map("diseases")
 }
 
 model Phase {
@@ -71,6 +79,8 @@ model Phase {
   fungicide    Fungicide    @relation(fields: [fungicideId], references: [id])
   fungicideId  Int          @map("fungicide_id") @db.Integer
   createdAt    DateTime     @default(now()) @db.Timestamptz()
+
+  @@map("phases")
 }
 
 model Fungicide {
@@ -79,6 +89,8 @@ model Fungicide {
   description String?
   Phase       Phase[]
   createdAt   DateTime @default(now()) @db.Timestamptz()
+
+  @@map("fungicides")
 }
 
 model PhaseImage {
@@ -87,6 +99,8 @@ model PhaseImage {
   phase     Phase    @relation(fields: [phaseId], references: [id])
   phaseId   Int      @map("phase_id") @db.Integer
   createdAt DateTime @default(now()) @db.Timestamptz()
+
+  @@map("phase_images")
 }
 
 model Scale {
@@ -95,6 +109,8 @@ model Scale {
   description String?
   images      ScaleImage[]
   createdAt   DateTime     @default(now()) @db.Timestamptz()
+
+  @@map("scales")
 }
 
 model ScaleImage {
@@ -103,6 +119,8 @@ model ScaleImage {
   scale     Scale    @relation(fields: [scaleId], references: [id])
   scaleId   Int      @map("scale_id") @db.Integer
   createdAt DateTime @default(now()) @db.Timestamptz()
+
+  @@map("scale_images")
 }
 
 model Log {
@@ -113,4 +131,6 @@ model Log {
   user      User     @relation(fields: [userId], references: [id])
   userId    Int      @map("user_id") @db.Integer
   createdAt DateTime @default(now()) @db.Timestamptz()
+
+  @@map("logs")
 }
