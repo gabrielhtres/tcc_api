@@ -12,84 +12,105 @@ datasource db {
 }
 
 model User {
-  id          Int        @id @default(autoincrement()) @db.Integer
-  name        String
-  cpf         String     @unique @db.VarChar(11)
-  email       String     @unique
-  phone       String     @db.VarChar(12)
-  isAdmin     Int        @default(0) @db.Integer
-  password    String
-  analyzes    Analysis[]
-  logs        Log[]
-  jwtToken    String?    @map("jwt_token")
-  jwtRefresh  String?    @map("jwt_refresh")
-  createdAt   DateTime   @default(now()) @db.Timestamptz()
-  updatedAt   DateTime   @default(now()) @db.Timestamptz()
+  id         Int        @id @default(autoincrement()) @db.Integer
+  name       String
+  cpf        String     @unique @db.VarChar(11)
+  email      String     @unique
+  phone      String     @db.VarChar(12)
+  isAdmin    Int        @default(0) @db.Integer
+  password   String
+  analyzes   Analysis[]
+  logs       Log[]
+  jwtToken   String?    @map("jwt_token")
+  jwtRefresh String?    @map("jwt_refresh")
+  createdAt  DateTime   @default(now()) @db.Timestamptz()
+  updatedAt  DateTime   @default(now()) @db.Timestamptz()
 }
 
 model Analysis {
-  id           Int      @id @default(autoincrement()) @db.Integer
-  name         String
-  description  String?
-  user         User     @relation(fields: [userId], references: [id])
-  userId       Int      @map("user_id") @db.Integer
-  plot         Plot[]
-  createdAt    DateTime @default(now()) @db.Timestamptz() @map("created_at")
-  updatedAt    DateTime @default(now()) @db.Timestamptz()
+  id          Int      @id @default(autoincrement()) @db.Integer
+  name        String
+  description String?
+  user        User     @relation(fields: [userId], references: [id])
+  userId      Int      @map("user_id") @db.Integer
+  plot        Plot[]
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt   DateTime @default(now()) @db.Timestamptz()
 }
 
 model Plot {
-  id          Int      @id @default(autoincrement()) @db.Integer
+  id          Int       @id @default(autoincrement()) @db.Integer
   name        String
   description String?
-  xCoordinate Float    @map("x_coordinate") @db.DoublePrecision
-  yCoordinate Float    @map("y_coordinate") @db.DoublePrecision
-  analysis    Analysis @relation(fields: [analysisId], references: [id])
-  analysisId  Int      @map("analysis_id") @db.Integer
-  phase       Phase[]
-  createdAt   DateTime @default(now()) @db.Timestamptz()
+  xCoordinate Float     @map("x_coordinate") @db.DoublePrecision
+  yCoordinate Float     @map("y_coordinate") @db.DoublePrecision
+  analysis    Analysis  @relation(fields: [analysisId], references: [id])
+  analysisId  Int       @map("analysis_id") @db.Integer
+  disease     Disease[]
+  createdAt   DateTime  @default(now()) @db.Timestamptz()
+}
+
+model Disease {
+  id        Int      @id @default(autoincrement()) @db.Integer
+  name      String
+  plot      Plot     @relation(fields: [plotId], references: [id])
+  plotId    Int      @map("plot_id") @db.Integer
+  phases    Phase[]
+  createdAt DateTime @default(now()) @db.Timestamptz()
 }
 
 model Phase {
+  id           Int          @id @default(autoincrement()) @db.Integer
+  name         String
+  disease      Disease      @relation(fields: [diseaseId], references: [id])
+  diseaseId    Int          @map("disease_id") @db.Integer
+  images       PhaseImage[]
+  hasIncidence Boolean      @map("has_incidence")
+  date         DateTime     @default(now()) @db.Date
+  meteorology  String
+  fungicide    Fungicide    @relation(fields: [fungicideId], references: [id])
+  fungicideId  Int          @map("fungicide_id") @db.Integer
+  createdAt    DateTime     @default(now()) @db.Timestamptz()
+}
+
+model Fungicide {
   id          Int      @id @default(autoincrement()) @db.Integer
   name        String
   description String?
-  plot        Plot     @relation(fields: [plotId], references: [id])
-  plotId      Int      @map("plot_id") @db.Integer
-  images      PhaseImage[]
+  Phase       Phase[]
   createdAt   DateTime @default(now()) @db.Timestamptz()
 }
 
 model PhaseImage {
-  id          Int      @id @default(autoincrement()) @db.Integer
-  link        String
-  phase       Phase    @relation(fields: [phaseId], references: [id])
-  phaseId     Int      @map("phase_id") @db.Integer
-  createdAt   DateTime @default(now()) @db.Timestamptz()
+  id        Int      @id @default(autoincrement()) @db.Integer
+  link      String
+  phase     Phase    @relation(fields: [phaseId], references: [id])
+  phaseId   Int      @map("phase_id") @db.Integer
+  createdAt DateTime @default(now()) @db.Timestamptz()
 }
 
 model Scale {
-  id          Int      @id @default(autoincrement()) @db.Integer
+  id          Int          @id @default(autoincrement()) @db.Integer
   name        String
   description String?
   images      ScaleImage[]
-  createdAt   DateTime @default(now()) @db.Timestamptz()
+  createdAt   DateTime     @default(now()) @db.Timestamptz()
 }
 
 model ScaleImage {
-  id          Int      @id @default(autoincrement()) @db.Integer
-  link        String
-  scale       Scale    @relation(fields: [scaleId], references: [id])
-  scaleId     Int      @map("scale_id") @db.Integer
-  createdAt   DateTime @default(now()) @db.Timestamptz()
+  id        Int      @id @default(autoincrement()) @db.Integer
+  link      String
+  scale     Scale    @relation(fields: [scaleId], references: [id])
+  scaleId   Int      @map("scale_id") @db.Integer
+  createdAt DateTime @default(now()) @db.Timestamptz()
 }
 
 model Log {
-  id          Int      @id @default(autoincrement()) @db.Integer
-  method      String
-  route       String
-  payload     String
-  user        User     @relation(fields: [userId], references: [id])
-  userId      Int      @map("user_id") @db.Integer
-  createdAt   DateTime @default(now()) @db.Timestamptz()
+  id        Int      @id @default(autoincrement()) @db.Integer
+  method    String
+  route     String
+  payload   String
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int      @map("user_id") @db.Integer
+  createdAt DateTime @default(now()) @db.Timestamptz()
 }
