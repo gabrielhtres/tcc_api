@@ -11,17 +11,22 @@ export class UserController {
     async getAllUsers(req: Request, res: Response) {
         try {
             const users = await this.userRepository.getAll();
-            res.send('Hello World!');
+            console.log('users', users);
+
+            res.send(users);
         } catch (error) {
+            console.log('error get', error);
+
             res.status(500).json({ message: 'Failed to fetch users' });
         }
     }
 
     async create(req: Request, res: Response) {
+        console.log('req.body', req.body);
+
         try {
             const userData = req.body;
             const user = await this.userRepository.create(userData);
-            res.json(user).status(201);
         } catch (error) {
             res.status(500).json({ message: 'Failed to create user', error });
         }

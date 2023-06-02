@@ -6,12 +6,19 @@ const table = 'user';
 
 export class UserRepository {
     async getAll(): Promise<User[]> {
-        const users = await prisma[table].findMany();
+        const users = await prisma.user.findMany();
         return users;
     }
 
     async getById(id: number): Promise<User | null> {
         const user = await prisma.user.findUnique({ where: { id } });
+        return user;
+    }
+
+    async login(email: string, password: string): Promise<User | null> {
+        const user = await prisma.user.findFirst({
+            where: { email, password },
+        });
         return user;
     }
 

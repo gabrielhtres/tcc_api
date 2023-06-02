@@ -21,6 +21,8 @@ model User {
   password    String
   analyzes    Analysis[]
   logs        Log[]
+  jwtToken    String?    @map("jwt_token")
+  jwtRefresh  String?    @map("jwt_refresh")
   createdAt   DateTime   @default(now()) @db.Timestamptz()
   updatedAt   DateTime   @default(now()) @db.Timestamptz()
 }
