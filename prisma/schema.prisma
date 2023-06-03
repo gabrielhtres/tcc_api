@@ -22,7 +22,7 @@ model User {
   analyzes   Analysis[]
   logs       Log[]
   jwtToken   String?    @map("jwt_token")
-  jwtRefresh String?    @map("jwt_refresh")
+  // jwtRefresh String?    @map("jwt_refresh")
   createdAt  DateTime   @default(now()) @db.Timestamptz()
   updatedAt  DateTime   @default(now()) @db.Timestamptz()
 
@@ -33,6 +33,7 @@ model Analysis {
   id          Int      @id @default(autoincrement()) @db.Integer
   name        String
   description String?
+  status      String   @default("pending")
   user        User     @relation(fields: [userId], references: [id])
   userId      Int      @map("user_id") @db.Integer
   plot        Plot[]
@@ -48,6 +49,7 @@ model Plot {
   description String?
   xCoordinate Float     @map("x_coordinate") @db.DoublePrecision
   yCoordinate Float     @map("y_coordinate") @db.DoublePrecision
+  status      String   @default("pending")
   analysis    Analysis  @relation(fields: [analysisId], references: [id])
   analysisId  Int       @map("analysis_id") @db.Integer
   disease     Disease[]
@@ -59,6 +61,7 @@ model Plot {
 model Disease {
   id        Int      @id @default(autoincrement()) @db.Integer
   name      String
+  status      String   @default("pending")
   plot      Plot     @relation(fields: [plotId], references: [id])
   plotId    Int      @map("plot_id") @db.Integer
   phases    Phase[]
@@ -74,8 +77,10 @@ model Phase {
   diseaseId    Int          @map("disease_id") @db.Integer
   images       PhaseImage[]
   hasIncidence Boolean      @map("has_incidence")
+  percentage   Int?         @db.Integer
   date         DateTime     @default(now()) @db.Date
   meteorology  String
+  status       String       @default("pending")
   fungicide    Fungicide    @relation(fields: [fungicideId], references: [id])
   fungicideId  Int          @map("fungicide_id") @db.Integer
   createdAt    DateTime     @default(now()) @db.Timestamptz()
@@ -114,11 +119,12 @@ model Scale {
 }
 
 model ScaleImage {
-  id        Int      @id @default(autoincrement()) @db.Integer
-  link      String
-  scale     Scale    @relation(fields: [scaleId], references: [id])
-  scaleId   Int      @map("scale_id") @db.Integer
-  createdAt DateTime @default(now()) @db.Timestamptz()
+  id          Int      @id @default(autoincrement()) @db.Integer
+  link        String
+  percentage  Int      @db.Integer
+  scale       Scale    @relation(fields: [scaleId], references: [id])
+  scaleId     Int      @map("scale_id") @db.Integer
+  createdAt   DateTime @default(now()) @db.Timestamptz()
 
   @@map("scale_images")
 }
