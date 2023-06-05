@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 
 const table = 'user';
 
-export class UserRepository {
+class UserRepository {
     async getAll(): Promise<User[]> {
         const users = await prisma.user.findMany();
         return users;
@@ -51,3 +51,5 @@ export class UserRepository {
         return user;
     }
 }
+
+export default UserRepository;

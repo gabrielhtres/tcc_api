@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import jwt, { JsonWebTokenError } from 'jsonwebtoken';
-import { UserRepository } from '../Repositories/UserRepository';
+import jwt from 'jsonwebtoken';
+import UserRepository from '../Repositories/UserRepository';
 import { RequestWithToken } from '../Utils/types';
 
 async function loginUser(
