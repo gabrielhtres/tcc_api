@@ -1,10 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import UserRepository from '../Repositories/UserRepository';
-import { RequestWithToken } from '../Utils/types';
+import { RequestLoginWithToken } from '../Utils/types';
 
 async function loginUser(
-    req: RequestWithToken,
+    req: RequestLoginWithToken,
     res: Response,
     next: NextFunction
 ) {
@@ -12,6 +12,8 @@ async function loginUser(
     const { email, password } = req.body;
 
     const user = await userRepository.login(email, password);
+
+    console.log('veio aq');
 
     if (!user) {
         return res.status(401).json({ message: 'Invalid credentials' });

@@ -27,6 +27,8 @@ export class UserController {
         try {
             const userData = req.body;
             const user = await this.userRepository.create(userData);
+
+            res.json({ message: 'User created' });
         } catch (error) {
             res.status(500).json({ message: 'Failed to create user', error });
         }
