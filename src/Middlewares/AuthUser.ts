@@ -2,27 +2,35 @@ import { NextFunction, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import { RequestWithToken } from '../Utils/types';
 
-async function authUser(
+function authUser(
     req: RequestWithToken & { userId?: string },
     res: Response,
     next: NextFunction
 ) {
-    const token = req.headers.authorization?.split(' ')[1];
-    console.log('veio aqui\n\n');
+    const token = req.headers.authorization;
+
+    console.log('token', token);
 
     if (!token) {
-        return res.status(401).json({ message: 'Not authorized' }).end();
+        // next();
+        return res.status(401).json({ message: 'Token JWT ausente' }).end();
     }
 
-    jwt.verify(token, 'gR33nV1S10n', (err: any, decoded: any) => {
-        if (err) {
-            return res.status(401).json({ message: 'Not authorized' }).end();
+    try {
+        const decoded = jwt.verify(token.split(' ')[1], 'gR33nV1S10n');
+
+        if (typeof decoded === 'string') {
+            throw new Error('decoded não pode ser string');
         }
 
-        req.userId = decoded.userId;
-    });
+        if (typeof decoded !== 'string') {
+            req.userId = decoded.userId;
+        }
 
-    next();
+        next();
+    } catch (error) {
+        return res.status(401).json({ message: error }).end();
+    }
 }
 
 export default authUser;
