@@ -37,9 +37,10 @@ services:
         restart: always
         ports:
             - '6379:6379'
-        command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+        command: redis-server --save 20 1 --loglevel warning
+        # --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
         volumes:
-            - cache:/data
+            - redis:/data/redis
 
 networks:
     postgres:
@@ -48,5 +49,5 @@ networks:
 volumes:
     postgres:
     pgadmin:
-    cache:
+    redis:
         driver: local
