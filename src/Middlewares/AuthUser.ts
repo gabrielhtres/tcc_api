@@ -7,16 +7,16 @@ async function authUser(
     res: Response,
     next: NextFunction
 ) {
-    const token = req.headers.authorization?.split(' ')[1];
     console.log('veio aqui\n\n');
+    const token = req.headers.authorization?.split(' ')[1];
 
     if (!token) {
-        return res.status(401).json({ message: 'Not authorized' }).end();
+        return res.status(401).json({ message: 'Not authorized' });
     }
 
     jwt.verify(token, 'gR33nV1S10n', (err: any, decoded: any) => {
         if (err) {
-            return res.status(401).json({ message: 'Not authorized' }).end();
+            return res.status(401).json({ message: 'Not authorized' });
         }
 
         req.userId = decoded.userId;

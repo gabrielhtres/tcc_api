@@ -13,8 +13,6 @@ async function loginUser(
 
     const user = await userRepository.login(email, password);
 
-    console.log('veio aq');
-
     if (!user) {
         return res.status(401).json({ message: 'Invalid credentials' });
     }
@@ -25,6 +23,7 @@ async function loginUser(
         }
 
         req.token = token;
+
         next();
     });
 }
