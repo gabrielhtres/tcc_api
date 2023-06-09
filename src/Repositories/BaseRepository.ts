@@ -2,7 +2,7 @@ import { PrismaClient, Analysis } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-type PrismaModel<Model extends 'User' | 'Analysis'> = Model;
+type BasePromise<Model extends 'User' | 'Analysis'>;
 
 class BaseRepository {
     private table: string;
@@ -11,12 +11,12 @@ class BaseRepository {
         this.table = table;
     }
 
-    async getAll(): Promise<PrismaModel<'Analysis'>[]> {
+    async getAll(): Promise<BasePromise<'Analysis'>[]> {
         const analyzes = await prisma.analysis.findMany();
         return analyzes;
     }
 
-    async getById(id: number): Promise<T | null> {
+    async getById(id: number): Promise<BasePromise<'Analysis'> | null> {
         const user = await prisma.analysis.findUnique({ where: { id } });
         return user;
     }
