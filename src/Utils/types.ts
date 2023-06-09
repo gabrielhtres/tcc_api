@@ -4,10 +4,8 @@ interface RequestWithToken extends Request {
     token?: string;
 }
 
-interface RequestLoginWithToken extends Request {
-    email?: string;
-    password?: string;
-    token?: string;
+interface RequestLogin extends RequestWithToken {
+    userId?: number;
 }
 
-export { RequestWithToken, RequestLoginWithToken };
+export { RequestWithToken, RequestLogin };
