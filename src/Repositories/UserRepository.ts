@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 const table = 'user';
 
-class UserRepository extends BaseRepository<User> {
+class UserRepository /*extends BaseRepository<User>*/ {
     // async getAll(): Promise<User[]> {
     //     const users = await prisma.user.findMany();
     //     return users;

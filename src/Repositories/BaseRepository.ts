@@ -1,18 +1,20 @@
-import { PrismaClient, Analysis, User, Prisma } from '@prisma/client';
+import { PrismaClient, Analysis, User } from '@prisma/client';
 import { TablesType } from '../Utils/types';
 import GlobalPrismaClient from '../Utils/GlobalPrismaClient';
 
 type Model = Analysis | User;
 
-class BaseRepository<T> {
+const prisma = new PrismaClient();
+
+class BaseRepository<T extends Model> {
     private table: TablesType;
 
     constructor(table: TablesType) {
         this.table = table;
     }
 
-    async getAll<Model>(): Promise<T[]> {
-        const data = await GlobalPrismaClient[this.table].findMany();
+    async getAll(): Promise<T[]> {
+        const data = await prisma['user'].findMany();
         return data;
     }
 
