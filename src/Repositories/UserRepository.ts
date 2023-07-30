@@ -1,19 +1,20 @@
 import { PrismaClient, User } from '@prisma/client';
+import BaseRepository from './BaseRepository';
 
 const prisma = new PrismaClient();
 
 const table = 'user';
 
-class UserRepository {
-    async getAll(): Promise<User[]> {
-        const users = await prisma.user.findMany();
-        return users;
-    }
+class UserRepository extends BaseRepository<User> {
+    // async getAll(): Promise<User[]> {
+    //     const users = await prisma.user.findMany();
+    //     return users;
+    // }
 
-    async getById(id: number): Promise<User | null> {
-        const user = await prisma.user.findUnique({ where: { id } });
-        return user;
-    }
+    // async getById(id: number): Promise<User | null> {
+    //     const user = await prisma.user.findUnique({ where: { id } });
+    //     return user;
+    // }
 
     async login(email: string, password: string): Promise<User | null> {
         const user = await prisma.user.findFirst({
@@ -22,34 +23,34 @@ class UserRepository {
         return user;
     }
 
-    async create(userData: User): Promise<User> {
-        const user = await prisma.user.findFirst({
-            where: { email: userData.email, cpf: userData.cpf },
-        });
+    // async create(userData: User): Promise<User> {
+    //     const user = await prisma.user.findFirst({
+    //         where: { email: userData.email, cpf: userData.cpf },
+    //     });
 
-        if (!user) {
-            const userCreated = await prisma.user.create({
-                data: userData,
-            });
+    //     if (!user) {
+    //         const userCreated = await prisma.user.create({
+    //             data: userData,
+    //         });
 
-            return userCreated;
-        }
+    //         return userCreated;
+    //     }
 
-        return user;
-    }
+    //     return user;
+    // }
 
-    async update(id: number, userData: Partial<User>): Promise<User | null> {
-        const user = await prisma.user.update({
-            where: { id },
-            data: userData,
-        });
-        return user;
-    }
+    // async update(id: number, userData: Partial<User>): Promise<User | null> {
+    //     const user = await prisma.user.update({
+    //         where: { id },
+    //         data: userData,
+    //     });
+    //     return user;
+    // }
 
-    async delete(id: number): Promise<User | null> {
-        const user = await prisma.user.delete({ where: { id } });
-        return user;
-    }
+    // async delete(id: number): Promise<User | null> {
+    //     const user = await prisma.user.delete({ where: { id } });
+    //     return user;
+    // }
 }
 
 export default UserRepository;

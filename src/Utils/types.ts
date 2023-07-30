@@ -8,4 +8,6 @@ interface RequestLogin extends RequestWithToken {
     userId?: number;
 }
 
-export { RequestWithToken, RequestLogin };
+type TablesType = 'User' | 'Analysis';
+
+export { RequestWithToken, RequestLogin, TablesType };

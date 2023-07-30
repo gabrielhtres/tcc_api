@@ -1,54 +1,54 @@
-import { PrismaClient, Analysis } from '@prisma/client';
+import { PrismaClient, Analysis, User, Prisma } from '@prisma/client';
+import { TablesType } from '../Utils/types';
+import GlobalPrismaClient from '../Utils/GlobalPrismaClient';
 
-const prisma = new PrismaClient();
+type Model = Analysis | User;
 
-type BasePromise<Model extends 'User' | 'Analysis'>;
+class BaseRepository<T> {
+    private table: TablesType;
 
-class BaseRepository {
-    private table: string;
-
-    constructor(table: string, type: ) {
+    constructor(table: TablesType) {
         this.table = table;
     }
 
-    async getAll(): Promise<BasePromise<'Analysis'>[]> {
-        const analyzes = await prisma.analysis.findMany();
-        return analyzes;
+    async getAll<Model>(): Promise<T[]> {
+        const data = await GlobalPrismaClient[this.table].findMany();
+        return data;
     }
 
-    async getById(id: number): Promise<BasePromise<'Analysis'> | null> {
-        const user = await prisma.analysis.findUnique({ where: { id } });
-        return user;
+    async getById(id: number): Promise<T> {
+        const data = await prisma[this.table].findUnique({ where: { id } });
+        return data;
     }
 
-    async create(userData: Analysis): Promise<T> {
-        const user = await prisma.analysis.findFirst({
-            where: { email: userData.email, cpf: userData.cpf },
+    async create(createData: T): Promise<T> {
+        const data = await prisma.user.findFirst({
+            where: { ...createData },
         });
 
-        if (!user) {
-            const userCreated = await prisma.analysis.create({
-                data: userData,
+        if (!data) {
+            const created = await prisma[this.table].create({
+                data: createData,
             });
 
-            return userCreated;
+            return created;
         }
 
-        return user;
+        return data;
     }
 
-    async update(id: number, userData: Partial<T>): Promise<T | null> {
-        const user = await prisma.analysis.update({
+    async update(id: number, updateData: Partial<T>): Promise<T | null> {
+        const data = await prisma[this.table].update({
             where: { id },
-            data: userData,
+            data: updateData,
         });
-        return user;
+        return data;
     }
 
     async delete(id: number): Promise<User | null> {
-        const user = await prisma.analysis.delete({ where: { id } });
-        return user;
+        const data = await prisma[this.table].delete({ where: { id } });
+        return data;
     }
 }
 
-export default AnalysisRepository;
+export default BaseRepository;
