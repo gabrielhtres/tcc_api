@@ -1,6 +1,9 @@
 import express from 'express';
 import rootRoute from './Routes/index';
 import morgan from 'morgan';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const port = 3030;
