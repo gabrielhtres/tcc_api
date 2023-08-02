@@ -1,5 +1,7 @@
-import { Sequelize, DataTypes, Model } from 'sequelize';
+import { DataTypes, Model } from 'sequelize';
 import sequelize from '../Config/sequelize';
+import Log from './Log';
+import Analysis from './Analysis';
 
 class User extends Model {
     declare id: number;
@@ -9,9 +11,6 @@ class User extends Model {
     declare phone: string;
     declare isAdmin: boolean;
     declare password: string;
-    // declare analyzes: Analyze[];
-    // declare logs: Log[];
-    // declare jwtToken: string;
     declare createdAt: Date;
     declare updatedAt: Date;
 }
@@ -29,13 +28,15 @@ User.init(
         phone: DataTypes.STRING,
         isAdmin: DataTypes.BOOLEAN,
         password: DataTypes.STRING,
-        // analyzes: DataTypes.ARRAY(DataTypes.INTEGER),
-        // logs: DataTypes.ARRAY(DataTypes.INTEGER),
-        // jwtToken: DataTypes.STRING,
     },
     {
         sequelize,
         modelName: 'User',
-        tableName: 'users',
+        tableName: 'user',
     }
 );
+
+User.hasMany(Log, { foreignKey: 'userId' });
+User.hasMany(Analysis, { foreignKey: 'userId' });
+
+export default User;
