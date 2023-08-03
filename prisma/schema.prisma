@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
   // output = "../generated/client"
@@ -17,30 +14,30 @@ model User {
   cpf       String     @unique @db.VarChar(11)
   email     String     @unique
   phone     String     @db.VarChar(12)
-  isAdmin   Int        @default(0) @db.Integer
+  isAdmin   Boolean    @map("is_admin") @default(false) @db.Boolean
   password  String
   analyzes  Analysis[]
   logs      Log[]
   jwtToken  String?    @map("jwt_token")
   // jwtRefresh String?    @map("jwt_refresh")
-  createdAt DateTime   @default(now()) @db.Timestamptz()
-  updatedAt DateTime   @default(now()) @db.Timestamptz()
+  createdAt DateTime   @map("created_at") @default(now()) @db.Timestamptz()
+  updatedAt DateTime   @map("updated_at") @updatedAt @db.Timestamptz()
 
-  @@map("users")
+  @@map("user")
 }
 
 model Analysis {
   id          Int      @id @default(autoincrement()) @db.Integer
   name        String
   description String?
-  status      String   @default("pending")
+  status      String   @default("Pendente")
   user        User     @relation(fields: [userId], references: [id])
   userId      Int      @map("user_id") @db.Integer
   plot        Plot[]
-  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz()
-  updatedAt   DateTime @default(now()) @db.Timestamptz()
+  createdAt DateTime   @map("created_at") @default(now()) @db.Timestamptz()
+  updatedAt DateTime   @map("updated_at") @updatedAt @db.Timestamptz()
 
-  @@map("analyzes")
+  @@map("analysis")
 }
 
 model Plot {
@@ -49,25 +46,27 @@ model Plot {
   description String?
   xCoordinate Float     @map("x_coordinate") @db.DoublePrecision
   yCoordinate Float     @map("y_coordinate") @db.DoublePrecision
-  status      String    @default("pending")
+  status      String    @default("Pendente")
   analysis    Analysis  @relation(fields: [analysisId], references: [id])
   analysisId  Int       @map("analysis_id") @db.Integer
   disease     Disease[]
-  createdAt   DateTime  @default(now()) @db.Timestamptz()
+  createdAt DateTime   @map("created_at") @default(now()) @db.Timestamptz()
+  updatedAt DateTime   @map("updated_at") @updatedAt @db.Timestamptz()
 
-  @@map("plots")
+  @@map("plot")
 }
 
 model Disease {
   id        Int      @id @default(autoincrement()) @db.Integer
   name      String
-  status    String   @default("pending")
+  status    String   @default("Pendente")
   plot      Plot     @relation(fields: [plotId], references: [id])
   plotId    Int      @map("plot_id") @db.Integer
   phases    Phase[]
-  createdAt DateTime @default(now()) @db.Timestamptz()
+  createdAt DateTime   @map("created_at") @default(now()) @db.Timestamptz()
+  updatedAt DateTime   @map("updated_at") @updatedAt @db.Timestamptz()
 
-  @@map("diseases")
+  @@map("disease")
 }
 
 model Phase {
@@ -80,12 +79,13 @@ model Phase {
   percentage   Int?         @db.Integer
   date         DateTime     @default(now()) @db.Date
   meteorology  String
-  status       String       @default("pending")
+  status       String       @default("Pendente")
   fungicide    Fungicide    @relation(fields: [fungicideId], references: [id])
   fungicideId  Int          @map("fungicide_id") @db.Integer
-  createdAt    DateTime     @default(now()) @db.Timestamptz()
+  createdAt DateTime   @map("created_at") @default(now()) @db.Timestamptz()
+  updatedAt DateTime   @map("updated_at") @updatedAt @db.Timestamptz()
 
-  @@map("phases")
+  @@map("phase")
 }
 
 model Fungicide {
@@ -93,9 +93,10 @@ model Fungicide {
   name        String
   description String?
   Phase       Phase[]
-  createdAt   DateTime @default(now()) @db.Timestamptz()
+  createdAt DateTime   @map("created_at") @default(now()) @db.Timestamptz()
+  updatedAt DateTime   @map("updated_at") @updatedAt @db.Timestamptz()
 
-  @@map("fungicides")
+  @@map("fungicide")
 }
 
 model PhaseImage {
@@ -103,9 +104,10 @@ model PhaseImage {
   link      String
   phase     Phase    @relation(fields: [phaseId], references: [id])
   phaseId   Int      @map("phase_id") @db.Integer
-  createdAt DateTime @default(now()) @db.Timestamptz()
+  createdAt DateTime   @map("created_at") @default(now()) @db.Timestamptz()
+  updatedAt DateTime   @map("updated_at") @updatedAt @db.Timestamptz()
 
-  @@map("phase_images")
+  @@map("phase_image")
 }
 
 model Scale {
@@ -113,9 +115,10 @@ model Scale {
   name        String
   description String?
   images      ScaleImage[]
-  createdAt   DateTime     @default(now()) @db.Timestamptz()
+  createdAt DateTime   @map("created_at") @default(now()) @db.Timestamptz()
+  updatedAt DateTime   @map("updated_at") @updatedAt @db.Timestamptz()
 
-  @@map("scales")
+  @@map("scale")
 }
 
 model ScaleImage {
@@ -124,9 +127,10 @@ model ScaleImage {
   percentage Int      @db.Integer
   scale      Scale    @relation(fields: [scaleId], references: [id])
   scaleId    Int      @map("scale_id") @db.Integer
-  createdAt  DateTime @default(now()) @db.Timestamptz()
+  createdAt DateTime   @map("created_at") @default(now()) @db.Timestamptz()
+  updatedAt DateTime   @map("updated_at") @updatedAt @db.Timestamptz()
 
-  @@map("scale_images")
+  @@map("scale_image")
 }
 
 model Log {
@@ -136,7 +140,7 @@ model Log {
   payload   String
   user      User     @relation(fields: [userId], references: [id])
   userId    Int      @map("user_id") @db.Integer
-  createdAt DateTime @default(now()) @db.Timestamptz()
+  createdAt DateTime   @map("created_at") @default(now()) @db.Timestamptz()
 
-  @@map("logs")
+  @@map("log")
 }
