@@ -1,35 +1,49 @@
 import { Prisma, PrismaClient, User } from '@prisma/client';
-
+import { UserRepository } from '../Repositories/UserRepository';
+import { Request, Response } from 'express';
 export class UserController {
-    private prisma: PrismaClient;
+    private userRepository: UserRepository;
 
     constructor() {
-        this.prisma = new PrismaClient();
+        this.userRepository = new UserRepository();
     }
 
-    async getAll(): Promise<User[]> {
-        return this.prisma.user.findMany();
+    getAll(req: Request, res: Response) {
+        const users = this.userRepository.getAll();
+        return res.send(users).status(200);
     }
 
-    async getById(id: number): Promise<User | null> {
-        return this.prisma.user.findUnique({ where: { id } });
+    getById(req: Request, res: Response) {
+        const { id } = req.params;
+        const user = this.userRepository.getById(Number(id));
+        return res.send(user).status(200);
     }
 
-    async create(data: Prisma.UserCreateInput): Promise<User> {
-        return this.prisma.user.create({ data });
-    }
-
-    async update(
-        id: number,
-        data: Prisma.UserUpdateInput
-    ): Promise<User | null> {
-        return this.prisma.user.update({
-            where: { id },
-            data,
+    async create(req: Request, res: Response) {
+        const { name, cpf, email, phone, password } = req.body;
+        const user = await this.userRepository.create({
+            name,
+            cpf,
+            email,
+            phone,
+            password,
         });
+        console.log(user);
+
+        return res.send(user).status(201);
     }
 
-    async delete(id: number): Promise<User | null> {
-        return this.prisma.user.delete({ where: { id } });
+    update(req: Request, res: Response) {
+        const { id } = req.params;
+        const user = this.userRepository.update(Number(id), {
+            ...req.body,
+        });
+        return res.send(user).status(200);
+    }
+
+    delete(req: Request, res: Response) {
+        const { id } = req.params;
+        const user = this.userRepository.delete(Number(id));
+        return res.send(user).status(200);
     }
 }

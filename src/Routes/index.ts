@@ -7,14 +7,14 @@ const router = express.Router();
 // const redis = new ioredis();
 const userController = new UserController();
 
-router.post('/signin', userController.login.bind(userController));
+// router.post('/signin', userController.login.bind(userController));
 
 router.post('/signup', userController.create.bind(userController));
 
-router.use(userController.authUser.bind(userController));
+// router.use(userController.authUser.bind(userController));
 
 router.get('/', (req: RequestWithToken, res: Response) => {
-    res.send('deu boa o teste');
+    res.send('API GreenVision');
 });
 
 router.post('/logout', (req: RequestLogin, res: Response) => {
