@@ -24,14 +24,6 @@ router.post('/logout', (req: RequestLogin, res: Response) => {
         return res.status(401).json({ message: 'Token JWT ausente' }).end();
     }
 
-    // redis.set(`token-${token}`, token, 'EX', 600);
-
-    // redis.get(`token-${token}`, (err, reply) => {
-    //     if (err) {
-    //         return res.status(500).end();
-    //     }
-    // });
-
     return res.status(200).json({ message: 'Logout successfully' }).end();
 });
 
