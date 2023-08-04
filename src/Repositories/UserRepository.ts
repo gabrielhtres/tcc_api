@@ -1,10 +1,28 @@
 import { Prisma, PrismaClient, User } from '@prisma/client';
+import {
+    PrismaClientUnknownRequestError,
+    PrismaClientValidationError,
+} from '@prisma/client/runtime/library';
 
 export class UserRepository {
     private prisma: PrismaClient;
 
     constructor() {
         this.prisma = new PrismaClient();
+    }
+
+    async getUserToLogin(
+        email: string,
+        password: string
+    ): Promise<Partial<User>> {
+        const user = await this.prisma.user.findFirst({
+            where: {
+                email,
+                password,
+            },
+        });
+
+        return { id: user?.id, name: user?.name, email: user?.email };
     }
 
     async getAll(): Promise<User[]> {

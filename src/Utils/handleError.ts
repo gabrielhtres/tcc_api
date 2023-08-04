@@ -13,6 +13,9 @@ function handleError(
     code: number;
     message: string;
 } {
+    if (error instanceof Error) {
+    }
+
     if (error instanceof PrismaClientKnownRequestError) {
         if (error.code === 'P2002') {
             return {

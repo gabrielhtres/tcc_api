@@ -10,6 +10,8 @@ const userController = new UserController();
 // router.post('/signin', userController.login.bind(userController));
 
 router.post('/signup', userController.create.bind(userController));
+router.post('/signin', userController.login.bind(userController));
+router.post('/logout', userController.logout.bind(userController));
 
 // router.use(userController.authUser.bind(userController));
 
