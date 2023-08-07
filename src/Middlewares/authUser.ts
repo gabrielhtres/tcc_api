@@ -9,7 +9,16 @@ function authUser(req: Request, res: Response, next: NextFunction) {
             return res.status(401).json({ message: 'Token JWT ausente' }).end();
         }
 
-        jwt.verify(token, process.env.JWT_SECRET as string);
+        const decoded = jwt.verify(token, process.env.JWT_SECRET as string);
+
+        if (!decoded || typeof decoded === 'string') {
+            return res
+                .status(401)
+                .json({ message: 'Token JWT inválido' })
+                .end();
+        }
+
+        req.params.userId = decoded.id;
 
         return next();
     } catch (error) {
