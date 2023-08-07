@@ -29,7 +29,7 @@ export class UserController {
 
         const user = await this.userRepository.getUserToLogin(email, password);
 
-        if (!user.id) {
+        if (!user) {
             return res.status(401).json({ message: 'Usuário não encontrado' });
         }
 

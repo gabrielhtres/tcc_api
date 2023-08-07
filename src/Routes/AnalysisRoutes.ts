@@ -7,15 +7,13 @@ const analysisController = new AnalysisController();
 const router = express.Router();
 
 router.get(
-    '/user/:id',
-    validateId,
+    '/user',
     authUser,
     analysisController.getByUserId.bind(analysisController)
 );
 
 router.get(
     '/:id',
-    validateId,
     authUser,
     analysisController.getById.bind(analysisController)
 );

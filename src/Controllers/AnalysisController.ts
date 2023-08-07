@@ -22,8 +22,11 @@ export class AnalysisController {
     }
 
     async getByUserId(req: Request, res: Response) {
-        const { id } = req.params;
-        const analysis = await this.analysisRepository.getByUserId(Number(id));
+        const { userId } = req.params;
+
+        const analysis = await this.analysisRepository.getByUserId(
+            Number(userId)
+        );
 
         return res.send(analysis).status(200);
     }

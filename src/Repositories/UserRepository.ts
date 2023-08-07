@@ -10,20 +10,22 @@ export class UserRepository {
     async getUserToLogin(
         email: string,
         password: string
-    ): Promise<Partial<User>> {
-        const user = await this.prisma.user.findFirst({
+    ): Promise<Partial<User> | null> {
+        return this.prisma.user.findFirst({
             where: {
                 email,
                 password,
             },
+            select: {
+                id: true,
+                name: true,
+                email: true,
+            },
         });
-
-        return { id: user?.id, name: user?.name, email: user?.email };
     }
 
     async getAll(): Promise<User[]> {
-        const users = await this.prisma.user.findMany();
-        return users;
+        return this.prisma.user.findMany();
     }
 
     async getById(id: number): Promise<User | null> {
@@ -31,8 +33,7 @@ export class UserRepository {
     }
 
     async create(data: Prisma.UserCreateInput): Promise<User> {
-        const user = await this.prisma.user.create({ data });
-        return user;
+        return this.prisma.user.create({ data });
     }
 
     async update(
