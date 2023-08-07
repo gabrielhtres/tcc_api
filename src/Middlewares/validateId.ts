@@ -4,7 +4,7 @@ function validateId(req: Request, res: Response, next: NextFunction) {
     const id = req.params.id;
 
     if (!/^\d+$/.test(id)) {
-        return res.status(404).json({ message: 'Rota não encontrada' });
+        return res.status(404).json({ message: 'Rota não encontrada' }).end();
     }
 
     next();

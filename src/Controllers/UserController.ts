@@ -30,14 +30,17 @@ export class UserController {
         const user = await this.userRepository.getUserToLogin(email, password);
 
         if (!user) {
-            return res.status(401).json({ message: 'Usuário não encontrado' });
+            return res
+                .status(401)
+                .json({ message: 'Usuário não encontrado' })
+                .end();
         }
 
         const token = jwt.sign(user, process.env.JWT_SECRET as string, {
             expiresIn: '1h',
         });
 
-        return res.send({ token }).status(200);
+        return res.status(200).json({ token }).end();
     }
 
     async logout(req: Request, res: Response) {
@@ -69,7 +72,7 @@ export class UserController {
         const { id } = req.params;
         const user = await this.userRepository.getById(Number(id));
 
-        return res.send(user).status(200);
+        return res.status(200).json(user).end();
     }
 
     async create(req: Request, res: Response) {
@@ -84,13 +87,13 @@ export class UserController {
                 password,
             });
 
-            return res.send(user).status(201);
+            return res.status(201).json(user).end();
         } catch (error) {
             const { code, message } = handleError(
                 error as Prisma.PrismaClientKnownRequestError
             );
 
-            return res.status(code).json({ message });
+            return res.status(code).json({ message }).end();
         }
     }
 
@@ -105,13 +108,13 @@ export class UserController {
                 phone,
                 password,
             });
-            return res.send(user).status(200);
+            return res.status(200).json(user).end();
         } catch (error) {
             const { code, message } = handleError(
                 error as Prisma.PrismaClientKnownRequestError
             );
 
-            return res.status(code).json({ message });
+            return res.status(code).json({ message }).end();
         }
     }
 
@@ -120,13 +123,13 @@ export class UserController {
 
         try {
             const user = await this.userRepository.delete(Number(id));
-            return res.send(user).status(200);
+            return res.status(200).json(user).end();
         } catch (error) {
             const { code, message } = handleError(
                 error as Prisma.PrismaClientKnownRequestError
             );
 
-            return res.status(code).json({ message });
+            return res.status(code).json({ message }).end();
         }
     }
 }

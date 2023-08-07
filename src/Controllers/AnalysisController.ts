@@ -18,7 +18,7 @@ export class AnalysisController {
         const { id } = req.params;
         const analysis = await this.analysisRepository.getById(Number(id));
 
-        return res.send(analysis).status(200);
+        return res.status(200).json(analysis).end();
     }
 
     async getByUserId(req: Request, res: Response) {
@@ -28,7 +28,7 @@ export class AnalysisController {
             Number(userId)
         );
 
-        return res.send(analysis).status(200);
+        return res.status(200).json(analysis).end();
     }
 
     async create(req: Request, res: Response) {
@@ -51,13 +51,13 @@ export class AnalysisController {
                 },
             });
 
-            return res.send(analysis).status(201);
+            return res.status(201).json(analysis).end();
         } catch (error) {
             const { code, message } = handleError(
                 error as Prisma.PrismaClientKnownRequestError
             );
 
-            return res.status(code).json({ message });
+            return res.status(code).json({ message }).end();
         }
     }
 
@@ -74,13 +74,13 @@ export class AnalysisController {
                     },
                 },
             });
-            return res.send(analysis).status(200);
+            return res.status(200).json(analysis).end();
         } catch (error) {
             const { code, message } = handleError(
                 error as Prisma.PrismaClientKnownRequestError
             );
 
-            return res.status(code).json({ message });
+            return res.status(code).json({ message }).end();
         }
     }
 
@@ -89,13 +89,13 @@ export class AnalysisController {
 
         try {
             const analysis = await this.analysisRepository.delete(Number(id));
-            return res.send(analysis).status(200);
+            return res.status(200).json(analysis).end();
         } catch (error) {
             const { code, message } = handleError(
                 error as Prisma.PrismaClientKnownRequestError
             );
 
-            return res.status(code).json({ message });
+            return res.status(code).json({ message }).end();
         }
     }
 }
