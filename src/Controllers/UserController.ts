@@ -57,15 +57,6 @@ export class UserController {
         }
 
         try {
-            jwt.verify(token, process.env.JWT_SECRET as string);
-        } catch (error) {
-            return res
-                .status(401)
-                .json({ message: 'Token JWT inválido' })
-                .end();
-        }
-
-        try {
             redis.set(token, 'logout', { EX: 3600 });
         } catch (error) {
             return res.status(401).json({ message: 'Erro no Redis' }).end();

@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get('/:id', authUser, userController.getById.bind(userController));
 
-// router.get('/', userController.getAll.bind(userController));
+router.post('/logout', authUser, userController.logout.bind(userController));
 
 router.put('/:id', authUser, userController.update.bind(userController));
 
