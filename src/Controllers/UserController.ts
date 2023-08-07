@@ -19,7 +19,6 @@ export class UserController {
 
     async login(req: Request, res: Response) {
         const { email, password } = req.body;
-        console.log(email, password);
 
         if (!email || !password) {
             return res

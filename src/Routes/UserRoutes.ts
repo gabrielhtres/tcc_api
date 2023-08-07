@@ -6,8 +6,11 @@ const userController = new UserController();
 const router = express.Router();
 
 router.get('/:id', authUser, userController.getById.bind(userController));
+
 // router.get('/', userController.getAll.bind(userController));
+
 router.put('/:id', authUser, userController.update.bind(userController));
+
 router.delete('/:id', authUser, userController.delete.bind(userController));
 
 export default router;

@@ -1,8 +1,4 @@
 import { Prisma, PrismaClient, User } from '@prisma/client';
-import {
-    PrismaClientUnknownRequestError,
-    PrismaClientValidationError,
-} from '@prisma/client/runtime/library';
 
 export class UserRepository {
     private prisma: PrismaClient;
