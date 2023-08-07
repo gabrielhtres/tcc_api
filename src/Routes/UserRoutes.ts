@@ -1,16 +1,32 @@
 import express from 'express';
 import { UserController } from '../Controllers/UserController';
 import authUser from '../Middlewares/authUser';
+import validateId from '../Middlewares/validateId';
 
 const userController = new UserController();
 const router = express.Router();
 
-router.get('/:id', authUser, userController.getById.bind(userController));
-
 router.post('/logout', authUser, userController.logout.bind(userController));
 
-router.put('/:id', authUser, userController.update.bind(userController));
+router.get(
+    '/:id',
+    validateId,
+    authUser,
+    userController.getById.bind(userController)
+);
 
-router.delete('/:id', authUser, userController.delete.bind(userController));
+router.put(
+    '/:id',
+    validateId,
+    authUser,
+    userController.update.bind(userController)
+);
+
+router.delete(
+    '/:id',
+    validateId,
+    authUser,
+    userController.delete.bind(userController)
+);
 
 export default router;

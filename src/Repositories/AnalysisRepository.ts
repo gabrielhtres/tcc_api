@@ -13,7 +13,23 @@ export class AnalysisRepository {
     // }
 
     async getById(id: number): Promise<Analysis | null> {
-        return this.prisma.analysis.findUnique({ where: { id } });
+        return this.prisma.analysis.findUnique({
+            where: { id },
+            select: {
+                id: true,
+                name: true,
+                description: true,
+                userId: true,
+                statusId: true,
+                createdAt: true,
+                updatedAt: true,
+                status: {
+                    select: {
+                        name: true,
+                    },
+                },
+            },
+        });
     }
 
     async getByUserId(id: number): Promise<Analysis[] | null> {

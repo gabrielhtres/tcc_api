@@ -2,7 +2,6 @@ import { Prisma, PrismaClient, User } from '@prisma/client';
 import { AnalysisRepository } from '../Repositories/AnalysisRepository';
 import { Request, Response } from 'express';
 import handleError from '../Utils/handleError';
-
 export class AnalysisController {
     private analysisRepository: AnalysisRepository;
 
@@ -17,9 +16,9 @@ export class AnalysisController {
 
     async getById(req: Request, res: Response) {
         const { id } = req.params;
-        const user = await this.analysisRepository.getById(Number(id));
+        const analysis = await this.analysisRepository.getById(Number(id));
 
-        return res.send(user).status(200);
+        return res.send(analysis).status(200);
     }
 
     async getByUserId(req: Request, res: Response) {
@@ -30,7 +29,7 @@ export class AnalysisController {
     }
 
     async create(req: Request, res: Response) {
-        const { id } = req.params;
+        const { userId } = req.params;
         const { name, description } = req.body;
 
         try {
@@ -39,7 +38,12 @@ export class AnalysisController {
                 description,
                 user: {
                     connect: {
-                        id: Number(id),
+                        id: Number(userId),
+                    },
+                },
+                status: {
+                    connect: {
+                        id: 1,
                     },
                 },
             });
@@ -57,10 +61,15 @@ export class AnalysisController {
     async update(req: Request, res: Response) {
         try {
             const { id } = req.params;
-            const { name, description } = req.body;
+            const { name, description, statusId } = req.body;
             const analysis = await this.analysisRepository.update(Number(id), {
                 name,
                 description,
+                status: {
+                    connect: {
+                        id: statusId,
+                    },
+                },
             });
             return res.send(analysis).status(200);
         } catch (error) {
