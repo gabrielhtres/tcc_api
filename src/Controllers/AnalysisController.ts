@@ -33,7 +33,7 @@ export class AnalysisController {
 
     async create(req: Request, res: Response) {
         const { userId } = req.params;
-        const { name, description } = req.body;
+        const { name, description, statusId } = req.body;
 
         try {
             const analysis = await this.analysisRepository.create({
@@ -46,7 +46,7 @@ export class AnalysisController {
                 },
                 status: {
                     connect: {
-                        id: 1,
+                        id: Number(statusId),
                     },
                 },
             });
