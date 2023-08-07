@@ -46,6 +46,9 @@ export class AnalysisRepository {
     ): Promise<Analysis | null> {
         return this.prisma.analysis.update({
             where: { id },
+            include: {
+                status: true,
+            },
             data,
         });
     }
