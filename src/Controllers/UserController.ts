@@ -4,6 +4,7 @@ import { Request, Response } from 'express';
 import handleError from '../Utils/handleError';
 import jwt from 'jsonwebtoken';
 import redis from '../Config/Redis';
+
 export class UserController {
     private userRepository: UserRepository;
 
@@ -38,12 +39,22 @@ export class UserController {
             return res.status(401).json({ message: 'Token JWT ausente' }).end();
         }
 
+        const isLogout = await redis.get(token);
+
+        if (isLogout) {
+            return res
+                .status(401)
+                .json({ message: 'Usuário já deslogado' })
+                .end();
+        }
+
         try {
-            const redisClient = await redis.connect();
-            // const reply = await redisClient.set(token, 'logout');
-            // console.log(reply);
-        } catch (e) {
-            console.log(e);
+            jwt.verify(token, process.env.JWT_SECRET as string);
+        } catch (error) {
+            return res
+                .status(401)
+                .json({ message: 'Token JWT inválido aq' })
+                .end();
         }
 
         return res.status(200).json({ message: 'Usuário deslogado' }).end();
@@ -69,9 +80,9 @@ export class UserController {
             });
 
             return res.send(user).status(201);
-        } catch (e) {
+        } catch (error) {
             const { code, message } = handleError(
-                e as Prisma.PrismaClientKnownRequestError
+                error as Prisma.PrismaClientKnownRequestError
             );
 
             return res.status(code).json({ message });
@@ -90,9 +101,9 @@ export class UserController {
                 password,
             });
             return res.send(user).status(200);
-        } catch (e) {
+        } catch (error) {
             const { code, message } = handleError(
-                e as Prisma.PrismaClientKnownRequestError
+                error as Prisma.PrismaClientKnownRequestError
             );
 
             return res.status(code).json({ message });
@@ -105,9 +116,9 @@ export class UserController {
         try {
             const user = await this.userRepository.delete(Number(id));
             return res.send(user).status(200);
-        } catch (e) {
+        } catch (error) {
             const { code, message } = handleError(
-                e as Prisma.PrismaClientKnownRequestError
+                error as Prisma.PrismaClientKnownRequestError
             );
 
             return res.status(code).json({ message });
