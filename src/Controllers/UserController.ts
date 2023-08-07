@@ -19,6 +19,15 @@ export class UserController {
 
     async login(req: Request, res: Response) {
         const { email, password } = req.body;
+        console.log(email, password);
+
+        if (!email || !password) {
+            return res
+                .status(400)
+                .json({ message: 'Dados inválidos para o Login' })
+                .end();
+        }
+
         const user = await this.userRepository.getUserToLogin(email, password);
 
         if (!user.id) {
@@ -44,7 +53,7 @@ export class UserController {
         if (isLogout) {
             return res
                 .status(401)
-                .json({ message: 'Usuário já deslogado' })
+                .json({ message: 'Esse usuário já está deslogado' })
                 .end();
         }
 
@@ -53,8 +62,14 @@ export class UserController {
         } catch (error) {
             return res
                 .status(401)
-                .json({ message: 'Token JWT inválido aq' })
+                .json({ message: 'Token JWT inválido' })
                 .end();
+        }
+
+        try {
+            redis.set(token, 'logout', { EX: 3600 });
+        } catch (error) {
+            return res.status(401).json({ message: 'Erro no Redis' }).end();
         }
 
         return res.status(200).json({ message: 'Usuário deslogado' }).end();
