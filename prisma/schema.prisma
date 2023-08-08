@@ -48,7 +48,7 @@ model Plot {
   xCoordinate Float     @map("x_coordinate") @db.DoublePrecision
   yCoordinate Float     @map("y_coordinate") @db.DoublePrecision
   status      Status    @relation(fields: [statusId], references: [id])
-  statusId    Int       @map("status_id") @db.Integer @default(1)
+  statusId    Int       @default(1) @map("status_id") @db.Integer
   analysis    Analysis  @relation(fields: [analysisId], references: [id])
   analysisId  Int       @map("analysis_id") @db.Integer
   disease     Disease[]
@@ -62,7 +62,7 @@ model Disease {
   id        Int      @id @default(autoincrement()) @db.Integer
   name      String
   status    Status   @relation(fields: [statusId], references: [id])
-  statusId  Int      @map("status_id") @db.Integer @default(1)
+  statusId  Int      @default(1) @map("status_id") @db.Integer
   plot      Plot     @relation(fields: [plotId], references: [id])
   plotId    Int      @map("plot_id") @db.Integer
   phases    Phase[]
@@ -83,7 +83,7 @@ model Phase {
   date         DateTime     @default(now()) @db.Date
   meteorology  String
   status       Status       @relation(fields: [statusId], references: [id])
-  statusId     Int          @map("status_id") @db.Integer @default(1)
+  statusId     Int          @default(1) @map("status_id") @db.Integer
   fungicide    Fungicide    @relation(fields: [fungicideId], references: [id])
   fungicideId  Int          @map("fungicide_id") @db.Integer
   createdAt    DateTime     @default(now()) @map("created_at") @db.Timestamptz()
@@ -138,13 +138,14 @@ model ScaleImage {
 }
 
 model Log {
-  id        Int      @id @default(autoincrement()) @db.Integer
-  method    String
-  route     String
-  payload   String
-  user      User     @relation(fields: [userId], references: [id])
-  userId    Int      @map("user_id") @db.Integer
-  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz()
+  id         Int      @id @default(autoincrement()) @db.Integer
+  method     String
+  route      String
+  payload    String
+  statusCode Int      @map("status_code") @db.Integer
+  user       User     @relation(fields: [userId], references: [id])
+  userId     Int      @map("user_id") @db.Integer
+  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz()
 
   @@map("log")
 }
