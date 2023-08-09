@@ -13,7 +13,7 @@ export class AnalysisRepository {
     // }
 
     async getById(id: number): Promise<Analysis | null> {
-        return this.prisma.analysis.findUnique({
+        return await this.prisma.analysis.findUnique({
             where: { id },
             include: {
                 status: true,
@@ -22,7 +22,7 @@ export class AnalysisRepository {
     }
 
     async getByUserId(id: number): Promise<Analysis[] | null> {
-        return this.prisma.analysis.findMany({
+        return await this.prisma.analysis.findMany({
             where: { userId: id },
             include: {
                 status: {
@@ -36,15 +36,14 @@ export class AnalysisRepository {
     }
 
     async create(data: Prisma.AnalysisCreateInput): Promise<Analysis> {
-        const analysis = await this.prisma.analysis.create({ data });
-        return analysis;
+        return await this.prisma.analysis.create({ data });
     }
 
     async update(
         id: number,
         data: Prisma.AnalysisUpdateInput
     ): Promise<Analysis | null> {
-        return this.prisma.analysis.update({
+        return await this.prisma.analysis.update({
             where: { id },
             include: {
                 status: true,
@@ -54,6 +53,6 @@ export class AnalysisRepository {
     }
 
     async delete(id: number): Promise<Analysis | null> {
-        return this.prisma.analysis.delete({ where: { id } });
+        return await this.prisma.analysis.delete({ where: { id } });
     }
 }

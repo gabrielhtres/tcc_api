@@ -13,7 +13,7 @@ export class DiseaseRepository {
     // }
 
     async getById(id: number): Promise<Disease | null> {
-        return this.prisma.disease.findUnique({
+        return await this.prisma.disease.findUnique({
             where: { id },
             include: {
                 status: true,
@@ -22,7 +22,7 @@ export class DiseaseRepository {
     }
 
     async getByPlotId(id: number): Promise<Disease[] | null> {
-        return this.prisma.disease.findMany({
+        return await this.prisma.disease.findMany({
             where: { plotId: id },
             include: {
                 status: {
@@ -36,15 +36,14 @@ export class DiseaseRepository {
     }
 
     async create(data: Prisma.DiseaseCreateInput): Promise<Disease> {
-        const disease = await this.prisma.disease.create({ data });
-        return disease;
+        return await this.prisma.disease.create({ data });
     }
 
     async update(
         id: number,
         data: Prisma.DiseaseUpdateInput
     ): Promise<Disease | null> {
-        return this.prisma.disease.update({
+        return await this.prisma.disease.update({
             where: { id },
             include: {
                 status: true,
@@ -54,6 +53,6 @@ export class DiseaseRepository {
     }
 
     async delete(id: number): Promise<Disease | null> {
-        return this.prisma.disease.delete({ where: { id } });
+        return await this.prisma.disease.delete({ where: { id } });
     }
 }

@@ -13,7 +13,7 @@ export class PlotRepository {
     // }
 
     async getById(id: number): Promise<Plot | null> {
-        return this.prisma.plot.findUnique({
+        return await this.prisma.plot.findUnique({
             where: { id },
             include: {
                 status: true,
@@ -22,7 +22,7 @@ export class PlotRepository {
     }
 
     async getByAnalysisId(id: number): Promise<Plot[] | null> {
-        return this.prisma.plot.findMany({
+        return await this.prisma.plot.findMany({
             where: { analysisId: id },
             include: {
                 status: {
@@ -36,15 +36,14 @@ export class PlotRepository {
     }
 
     async create(data: Prisma.PlotCreateInput): Promise<Plot> {
-        const plot = await this.prisma.plot.create({ data });
-        return plot;
+        return await this.prisma.plot.create({ data });
     }
 
     async update(
         id: number,
         data: Prisma.PlotUpdateInput
     ): Promise<Plot | null> {
-        return this.prisma.plot.update({
+        return await this.prisma.plot.update({
             where: { id },
             include: {
                 status: true,
@@ -54,6 +53,6 @@ export class PlotRepository {
     }
 
     async delete(id: number): Promise<Plot | null> {
-        return this.prisma.plot.delete({ where: { id } });
+        return await this.prisma.plot.delete({ where: { id } });
     }
 }
