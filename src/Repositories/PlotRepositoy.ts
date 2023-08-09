@@ -36,8 +36,8 @@ export class PlotRepository {
     }
 
     async create(data: Prisma.PlotCreateInput): Promise<Plot> {
-        const analysis = await this.prisma.plot.create({ data });
-        return analysis;
+        const plot = await this.prisma.plot.create({ data });
+        return plot;
     }
 
     async update(

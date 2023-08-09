@@ -36,8 +36,8 @@ export class DiseaseRepository {
     }
 
     async create(data: Prisma.DiseaseCreateInput): Promise<Disease> {
-        const analysis = await this.prisma.disease.create({ data });
-        return analysis;
+        const disease = await this.prisma.disease.create({ data });
+        return disease;
     }
 
     async update(
