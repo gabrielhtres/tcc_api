@@ -14,6 +14,7 @@ const logging = async (req: Request, res: Response, next: NextFunction) => {
             originalUrl,
             body,
         } = req;
+
         const payload = JSON.stringify(body || {});
 
         await prisma.log.create({
@@ -22,13 +23,14 @@ const logging = async (req: Request, res: Response, next: NextFunction) => {
                 statusCode,
                 payload,
                 route: originalUrl,
-                user: !specialRoutes.includes(originalUrl)
-                    ? {
-                          connect: {
-                              id: Number(userId),
-                          },
-                      }
-                    : undefined,
+                user:
+                    !specialRoutes.includes(originalUrl) && userId
+                        ? {
+                              connect: {
+                                  id: Number(userId),
+                              },
+                          }
+                        : undefined,
             },
         });
     });
