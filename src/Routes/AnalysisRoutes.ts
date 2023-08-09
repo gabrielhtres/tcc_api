@@ -14,6 +14,7 @@ router.get(
 
 router.get(
     '/:id',
+    validateId,
     authUser,
     analysisController.getById.bind(analysisController)
 );
