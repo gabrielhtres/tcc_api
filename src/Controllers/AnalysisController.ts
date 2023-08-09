@@ -70,7 +70,7 @@ export class AnalysisController {
                 description,
                 status: {
                     connect: {
-                        id: statusId,
+                        id: Number(statusId),
                     },
                 },
             });
