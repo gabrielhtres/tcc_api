@@ -1,9 +1,8 @@
 import express, { Request, Response } from 'express';
 import userRoutes from './UserRoutes';
 import analysisRoutes from './AnalysisRoutes';
-import { RequestLogin, RequestWithToken } from '../Utils/types';
+import { RequestWithToken } from '../Utils/types';
 import { UserController } from '../Controllers/UserController';
-import authUser from '../Middlewares/authUser';
 
 const router = express.Router();
 const userController = new UserController();
