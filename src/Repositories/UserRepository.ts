@@ -11,7 +11,7 @@ export class UserRepository {
         email: string,
         password: string
     ): Promise<Partial<User> | null> {
-        return this.prisma.user.findFirst({
+        return await this.prisma.user.findFirst({
             where: {
                 email,
                 password,
@@ -25,28 +25,28 @@ export class UserRepository {
     }
 
     async getAll(): Promise<User[]> {
-        return this.prisma.user.findMany();
+        return await this.prisma.user.findMany();
     }
 
     async getById(id: number): Promise<User | null> {
-        return this.prisma.user.findUnique({ where: { id } });
+        return await this.prisma.user.findUnique({ where: { id } });
     }
 
     async create(data: Prisma.UserCreateInput): Promise<User> {
-        return this.prisma.user.create({ data });
+        return await this.prisma.user.create({ data });
     }
 
     async update(
         id: number,
         data: Prisma.UserUpdateInput
     ): Promise<User | null> {
-        return this.prisma.user.update({
+        return await this.prisma.user.update({
             where: { id },
             data,
         });
     }
 
     async delete(id: number): Promise<User | null> {
-        return this.prisma.user.delete({ where: { id } });
+        return await this.prisma.user.delete({ where: { id } });
     }
 }
