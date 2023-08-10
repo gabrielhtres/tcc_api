@@ -9,19 +9,18 @@ datasource db {
 }
 
 model User {
-  id        Int        @id @default(autoincrement()) @db.Integer
-  name      String
-  cpf       String     @unique @db.VarChar(11)
-  email     String     @unique
-  phone     String     @db.VarChar(12)
-  isAdmin   Boolean    @default(false) @map("is_admin") @db.Boolean
-  password  String
-  analyzes  Analysis[]
-  logs      Log[]
-  jwtToken  String?    @map("jwt_token")
-  // jwtRefresh String?    @map("jwt_refresh")
-  createdAt DateTime   @default(now()) @map("created_at") @db.Timestamptz()
-  updatedAt DateTime   @updatedAt @map("updated_at") @db.Timestamptz()
+  id           Int        @id @default(autoincrement()) @db.Integer
+  name         String
+  cpf          String     @unique @db.VarChar(11)
+  email        String     @unique
+  phone        String     @db.VarChar(12)
+  isAdmin      Boolean    @default(false) @map("is_admin") @db.Boolean
+  password     String
+  analyzes     Analysis[]
+  logs         Log[]
+  refreshToken String?    @map("refresh_token")
+  createdAt    DateTime   @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt    DateTime   @updatedAt @map("updated_at") @db.Timestamptz()
 
   @@map("users")
 }
