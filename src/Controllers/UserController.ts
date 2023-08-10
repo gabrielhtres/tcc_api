@@ -29,7 +29,7 @@ export class UserController {
 
         const user = await this.userRepository.getUserToLogin(email, password);
 
-        if (!user) {
+        if (!user || !user.id) {
             return res
                 .status(401)
                 .json({ message: 'Usuário não encontrado' })
@@ -40,7 +40,78 @@ export class UserController {
             expiresIn: '1h',
         });
 
-        return res.status(200).json({ token }).end();
+        const refreshToken = jwt.sign(
+            { refreshKey: process.env.JWT_REFRESH_KEY },
+            process.env.JWT_SECRET as string,
+            {
+                expiresIn: '1h',
+            }
+        );
+
+        await this.userRepository.update(user.id, { refreshToken });
+
+        return res.status(200).json({ token, refreshToken }).end();
+    }
+
+    async refresh(req: Request, res: Response) {
+        const refreshToken = req.headers.authorization?.split(' ')[1];
+
+        if (!refreshToken) {
+            return res.status(401).json({ message: 'Token JWT ausente' }).end();
+        }
+
+        try {
+            const decoded = jwt.verify(
+                refreshToken,
+                process.env.JWT_SECRET as string
+            ) as { refreshKey: string };
+
+            if (decoded.refreshKey !== process.env.JWT_REFRESH_KEY) {
+                return res
+                    .status(401)
+                    .json({ message: 'Token JWT inválido' })
+                    .end();
+            }
+
+            const user = await this.userRepository.getUserToRefresh(
+                refreshToken
+            );
+
+            if (!user || !user.id) {
+                return res
+                    .status(401)
+                    .json({ message: 'Token JWT inválido' })
+                    .end();
+            }
+
+            const newToken = jwt.sign(user, process.env.JWT_SECRET as string, {
+                expiresIn: '1h',
+            });
+
+            const newRefreshToken = jwt.sign(
+                { refreshKey: process.env.JWT_REFRESH_KEY },
+                process.env.JWT_SECRET as string,
+                {
+                    expiresIn: '1h',
+                }
+            );
+
+            await this.userRepository.update(user.id, {
+                refreshToken: newRefreshToken,
+            });
+
+            return res
+                .status(200)
+                .json({ token: newToken, refreshToken: newRefreshToken })
+                .end();
+        } catch (error) {
+            console.log(error);
+
+            return res
+                .status(401)
+                .json({ message: 'Token JWT inválido' })
+                .end();
+        }
     }
 
     async logout(req: Request, res: Response) {

@@ -7,6 +7,7 @@ const userController = new UserController();
 const router = express.Router();
 
 router.post('/logout', authUser, userController.logout.bind(userController));
+router.post('/refresh', userController.refresh.bind(userController));
 
 router.get(
     '/:id',

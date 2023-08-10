@@ -24,6 +24,14 @@ export class UserRepository {
         });
     }
 
+    async getUserToRefresh(refreshToken: string): Promise<User | null> {
+        return await this.prisma.user.findFirst({
+            where: {
+                refreshToken,
+            },
+        });
+    }
+
     async getAll(): Promise<User[]> {
         return await this.prisma.user.findMany();
     }
