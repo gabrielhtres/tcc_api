@@ -157,6 +157,59 @@ model Status {
   analyzes  Analysis[]
   phases    Phase[]
   createdAt DateTime   @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt DateTime   @updatedAt @map("updated_at") @db.Timestamptz()
 
   @@map("status")
+}
+
+model DefaultDisease {
+  id                      Int                       @id @db.Integer
+  classification          String
+  culture                 String
+  scientificName          String                    @map("scientific_name")
+  commonNames             String                    @map("common_names")
+  author                  String
+  description             String
+  symptoms                String
+  bioecology              String
+  control                 String
+  fungicides              DefaultFungicide[]
+  DefaultDiseaseFungicide DefaultDiseaseFungicide[]
+  createdAt               DateTime                  @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt               DateTime                  @updatedAt @map("updated_at") @db.Timestamptz()
+
+  @@map("default_disease")
+}
+
+model DefaultFungicide {
+  id                       Int                       @id @db.Integer
+  tradeMark                String                    @map("trade_mark")
+  patentHolder             String                    @map("patent_holder")
+  toxicologyClassification String                    @map("toxicology_classification")
+  ambientalClassification  String                    @map("ambiental_classification")
+  registerNumber           String                    @map("register_number")
+  cnpj                     String
+  actionMethod             String                    @map("action_method")
+  applicationMethod        String                    @map("application_method")
+  compatibility            String
+  packaging                String
+  activeIngredients        Json                      @map("active_ingredients")
+  diseases                 DefaultDisease[]
+  DefaultDiseaseFungicide  DefaultDiseaseFungicide[]
+  createdAt                DateTime                  @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt                DateTime                  @updatedAt @map("updated_at") @db.Timestamptz()
+
+  @@map("default_fungicide")
+}
+
+model DefaultDiseaseFungicide {
+  id          Int              @id @default(autoincrement())
+  diseaseId   Int              @map("disease_id") @db.Integer
+  disease     DefaultDisease   @relation(fields: [diseaseId], references: [id])
+  fungicideId Int              @map("fungicide_id") @db.Integer
+  fungicide   DefaultFungicide @relation(fields: [fungicideId], references: [id])
+  createdAt   DateTime         @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt   DateTime         @updatedAt @map("updated_at") @db.Timestamptz()
+
+  @@map("default_disease_fungicide")
 }
