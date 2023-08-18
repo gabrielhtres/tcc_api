@@ -1,0 +1,1260 @@
+[
+    {
+        "id": 4385,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Aspergillus spp.",
+        "commonNames": "Tombamento",
+        "author": "Hernández, A.G.; Mendes, M.A.S.",
+        "description": "Esta doença é causada por várias espécies de Aspergillus, sendo A. niger Tiegh. a espécie principal, mas A. alliaceous Thom et Church, A. amstelodami Thom et Church, A. caespitosus Raper et Thom, A. Link, A. carbonarius (Bainier) Thom, A. chevalieri Thom et Church, A. clavatus Desm., A. echinulatus Thom et Church, A. elegans Gasp., A. flavipes (Bainier et Sartory) Thom et Church, A. flavus Link, A. fumigatus Fresen., A. manginii Thom et Raper, A. nidulans (Eidam) G. Winter, A. ochraceus G. Wilh., A. parasiticus Speare, A. repens (Corda) Sacc., A. restrictus G. Sm., A. rubrobrunneus Samson et W. Gams, A. sulphureus (Fresn.) Thom et Church, A. sydowii (Bainier et Sartory) Thom et Church, A. tamarii Kita, A. terreus Thom, A. unguis (Émilie-Weil. et Gaudin) Thom et Raper, A. versicolor (Vuill.) Tirab. e A. wentii Wehmer também encontram-se com relativa freqüência nas plântulas mortas.\n\nA doença produz tombamento das plântulas recém-emergidas ou com até 30 dias após a semeadura, reduzindo o número de plantas por área e afetando, assim, os rendimentos.\n\nEsses fungos estão estabelecidos em todas as principais áreas produtoras de milho do mundo, existindo registros de incidência na África do Sul, Austrália, Brunei, Estados Unidos, Filipinas, Líbia, Papua-Nova Guiné, Tanzânia, Venezuela e Zimbábue. No Brasil, há registros nos estados de Mato Grosso do Sul, Pernambuco, São Paulo e Tocantins, embora deva estar presente em todo o país onde é cultivado o arroz.\n\nOs fungos são onívoros e podem ser encontrados atacando diversas espécies de plantas de distintas famílias.",
+        "symptoms": "O sintoma típico da doença é o tombamento das plântulas recém-emergidas ou com até 30 dias após a semeadura.\n\nCOTILÉDONE/COLEÓPTILO: Os fungos causam o apodrecimento do cotilédone, sobre estes produzem abundante crescimento micelial e formação de conidióforos e uma massa de conídios que pode variar de coloração segundo a espécie ou espécies envolvidas, de amarelo-esverdeado até negra. A infecção avança rapidamente para o coleóptilo, apodrecendo-o também e causando o tombamento da plântula dentro dos 30 dias posteriores à semeadura. Algumas plantas podem sobreviver, porém as lesões caracterizam-se pelos tecidos rasgados. Sob condições favoráveis para o desenvolvimento do patógeno, as plantas adultas também podem ser atacadas, manifestando murcha generalizada seguida de morte.",
+        "bioecology": "Aspergillus spp. são patógenos do solo distribuídos mundialmente e sobrevivem nos resíduos vegetais por longos períodos. Também sobrevivem nas sementes infectadas ou contaminadas.\n\nA principal via de disseminação do fungo a longa distância são as sementes infectadas ou contaminadas superficialmente. A dispersão do patógeno no campo se dá através dos conídios presentes no solo infectado.\n\nOs fatores de predisposição, como condições ambientais favoráveis ao desenvolvimento do patógeno, flutuações extremas de umidade no solo, sementes de má qualidade, danos mecânicos ou químicos nas plântulas e retardo na emergência, são condições que favorecem o desenvolvimento da doença.",
+        "control": "RESISTÊNCIA VARIETAL: Não há referências sobre a existência de cultivares com algum tipo de resistência ou tolerância a fungos do gênero Aspergillus causadores de tombamento.\n\nPRÁTICAS CULTURAIS: Destruir mediante o fogo ou enterramento profundo dos restos de cultura contaminados deixados no campo após a colheita. Evitar as flutuações extremas de umidade no solo.\n\nCONTROLE QUÍMICO: As sementes tratadas com fungicidas, protetores ou sistêmicos, promovem certo controle quando usadas sob condições que favorecem a rápida emergência das plântulas.",
+        "fungicides": [
+            {
+                "id": 10465
+            },
+            {
+                "id": 11798
+            },
+            {
+                "id": 4978
+            },
+            {
+                "id": 11925
+            },
+            {
+                "id": 5365
+            }
+        ]
+    },
+    {
+        "id": 4402,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Acremonium strictum",
+        "commonNames": "Murcha",
+        "author": "Hernández, A.G.; Mendes, M.A.S.",
+        "description": "O fungo Acremonium strictum W. Gams tem como sinônimo Cephalosporium strictum Auct. non Corda.\n\nA murcha causada por A. strictum pode provocar a morte prematura das plantas e só faz-se evidente quando a cultura está próxima à época do florescimento. Apesar da sua ampla distribuição e danos evidentes, questiona-se se o fungo é um patógeno ativo e agressivo.\n\nÉ comum em regiões úmidas e quentes, está presente em Minas Gerais e São Paulo e provavelmente em outras regiões com características climáticas similares.\n\nOutras plantas hospedeiras são Sorghum vulgare e Sorghum spp.",
+        "symptoms": "A infecção faz-se evidente no estádio de grão pastoso. O sintoma mais característico é o enegrecimento dos feixes vasculares do colmo, estendendo-se desde a raiz através de vários nós; plantas estéreis no campo também são comuns.\n\nFOLHAS: Coloração púrpura ou avermelhada.\n\nESPIGAS: Podem ser observadas no campo, espigas defeituosas e múltiplas em um único nó.\n\nCOLMO: Coloração púrpura ou avermelhada e excesso de brotos nos nós.\n\nSEMENTES: Grãos enrugados e mal desenvolvidos.",
+        "bioecology": "O patógeno é integrante da micoflora do comum, onde pode sobreviver nos restos de culturais infectado por muito tempo.\n\nA doença é disseminada com facilidade através do solo e das sementes infectadas.\n\nSolos pesados em regiões quentes e úmidas são condições que favorecem o desenvolvimento da murcha causada por A. strictum.",
+        "control": "Não há relatos de variedades ou híbridos resistentes a esta doença.\n\nÉ essencial o uso de sementes sadias, assim como a rotação de culturas no caso de solos já infectados; deve-se evitar o excesso de umidade nos solos pesados, fator que propicia o estabelecimento do fungo e o desenvolvimento da doença.",
+        "fungicides": [
+            {
+                "id": 5343
+            }
+        ]
+    },
+    {
+        "id": 4403,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Aspergillus flavus",
+        "commonNames": "Podridão-dos-grãos-armazenados, Fungo-de-pós-colheita",
+        "author": "Hernández, A.G.; Mendes, M.A.S.",
+        "description": "Aspergillus flavus Link ex Fr. é um dos patógenos de grãos mais comum e perigoso devido à sua capacidade de produzir toxinas do tipo aflatoxina, causadoras de diversos sintomas em aves e mamíferos. Uma outra espécie, A. parasiticus, produtora também de aflatoxinas, encontra-se quase sempre misturada com A. flavus, criando confusão na hora da identificação. Na realidade, A. flavus é um complexo de formas, subespécies e variedades, encontram-se entre elas A. flavus f. flavus Link, A. flavus f. fulvus (Yamam.) Hehira, A. flavus f. globosus (Sakag. et K. Yamda) Nehira, A. flavus f. magnasporus (Sakag. et G. Yamada) Nehira, A. flavus f. maydis Cif., A. flavus f. microsporus (Sakag. et K. Yamada) Nehira, A. flavus subsp. parasiticus (Speare) Kurtzman, M.J. Smiley, Robnett et Wicklow, A. flavus var. asper Sasaki, A. flavus var. columnaris Raper et Fennel, A. flavus var. microviridocitrinus (Constantin et Lucet) Nehira, A. flavus var. oryzae (Ahlb.) Kurtzman, M.J. Smiley, Robnett et Wicklow, A. flavus var. parvisclerotigenus Mich,. Saito et Tsuruta, A. flavus var. proliferans Anguli, Rajam, Thirum., Ragiah et Ramamurthi, A. flavus var. rufus Blochwitz, A. flavus var. sojae (Sakag. et K. Yamada ex Murak.) Kurtzman e A. flavus var. wehmeri (Constantin et Lucet) Blochwitz, provavelmente o agente causador da podridão-dos-grãos-armazenados. Os trabalhos que tratam desse fungo nunca fizeram uma identificação até o nível infra-específico.\n\nA doença causa uma deterioração generalizada dos grãos, tornando-os impróprios para o consumo animal e/ou humano, assim como reduzindo quase a zero o seu poder de germinação.\n\nNo Brasil, existem registros de A. flavus em sementes de milho na Bahia, Paraíba, Pernambuco e Sergipe.",
+        "symptoms": "SEMENTES: Tanto os grãos quanto o sabugo aparecem cobertos por uma massa pulverulenta verde-amarelada de esporos.",
+        "bioecology": "A doença torna-se mais severa quando as espigas são armazenadas com um alto teor de umidade.",
+        "control": "A medida de controle mais eficaz para o controle dessa doença é a secagem dos grãos até atingirem um teor de umidade inferior a 13%, pois o crescimento de A. flavus é estimulado por umidade entre 13 e 20%.",
+        "fungicides": [
+            {
+                "id": 17458
+            },
+            {
+                "id": 12897
+            },
+            {
+                "id": 11915
+            },
+            {
+                "id": 11916
+            },
+            {
+                "id": 8459
+            },
+            {
+                "id": 5395
+            },
+            {
+                "id": 8930
+            },
+            {
+                "id": 18316
+            },
+            {
+                "id": 10539
+            },
+            {
+                "id": 12300
+            },
+            {
+                "id": 16320
+            },
+            {
+                "id": 11899
+            },
+            {
+                "id": 9211
+            },
+            {
+                "id": 11527
+            }
+        ]
+    },
+    {
+        "id": 4441,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Fusarium moniliforme",
+        "commonNames": "Podridão-de-Fusarium, Podridão-do-colmo",
+        "author": "Santos, M.F.; Mendes, M.A.S.",
+        "description": "Fusarium moniliforme J. Sheld apresenta como sinonímias Fusarium moniliforme var. fici P. Caldis e Sporotrichum atropurpureum Peck.\n\nA doença é também conhecida como Podridão-rosada-da-espiga, Podridão-de-Fusarium e Podridão-dos-grãos. Esta doença causa podridão de colmo e pode ocasionar prejuízos quando a incidência do patógeno ocorrer próxima ao período do florescimento. \n\nEste fungo é relatado em todos os locais de cultivo do milho, principalmente nas regiões quentes e secas. Várias espécies cultivadas são hospedeiras deste fungo, como Phaseolus vulgaris (feijão), Oryza sativa (arroz), Hordeum vulgare (cevada), Triticum aestivum (trigo), Vigna unguiculata (feijão-macassar), Glycine max (soja), Sorghum bicolor (sorgo), Gossypium hirsutum (algodão), etc.",
+        "symptoms": "A podridão de Fusarium é uma doença que pode ocorrer no colmo (podridão do colmo) e na espiga (podridão rosada da espiga ou podridão dos grãos).\n\nCOLMO: Os tecidos internos do colmo apresentam colorações que variam de esbranquiçado a marrom-avermelhado. A doença inicia na base da planta e avança para a parte superior. Com o progresso da doença, pode ocorrer a quebra do colmo e até podridão da espiga.\n\nRAÍZES: Os tecidos internos das raízes apresentam coloração avermelhada.\n\nESPIGA: Dentre as doenças que ocorrem na espiga, esta é a mais freqüente. Os grãos, isolados ou em grupos, apresentam coloração avermelhada. Com o progresso da doença, há a formação de uma massa rosada cotonosa (micélio) sobre os grãos. O surgimento de estrias brancas em alguns grãos é comum, devido à ação do fungo sobre o pericarpo. Normalmente, a palha da espiga apresenta também a coloração avermelhada.",
+        "bioecology": "O patógeno sobrevive em hospedeiros alternativos e sementes. A sobrevivência no solo é de curta duração, pois raramente há formação de clamidósporo. Vento e sementes atuam disseminando o patógeno. \n\nA podridão de colmo geralmente está ligada ao ataque de nematóides ou pragas subterrâneas, estes debilitam a planta e causam ferimentos, favorecendo a penetração do fungo. Esta doença ocorre principalmente na época da polinização, quando períodos de seca vierem seguidos por períodos chuvosos. \n\nA podridão rosada é favorecida quando há ataque de insetos nas espigas e pelo excesso de chuva. A ação do fungo cessa quando a umidade dos grãos estiver em 18 a 19%.",
+        "control": "RESISTÊNCIA VARIETAL: Emprego de cultivares resistentes é o melhor método de controle.\n\nPRÁTICAS CULTURAIS: Utilização de adubação equilibrada, densidade de plantio adequada e não ultrapassar o período da colheita.",
+        "fungicides": [
+            {
+                "id": 11165
+            },
+            {
+                "id": 5185
+            },
+            {
+                "id": 10143
+            },
+            {
+                "id": 10138
+            },
+            {
+                "id": 5380
+            },
+            {
+                "id": 8302
+            },
+            {
+                "id": 8246
+            },
+            {
+                "id": 14031
+            },
+            {
+                "id": 11534
+            }
+        ]
+    },
+    {
+        "id": 4442,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Fusarium subglutinans",
+        "commonNames": "Podridão-por-Fusarium, Podridão-de-Fusarium",
+        "author": "Santos, M.F.; Mendes, M.A.S.",
+        "description": "Fusarium subglutinans (Wollenweb. & Reinking) P.E. Nelson, T.A. Toussoun & Marasas apresenta como sinonímias Fusarium moniliforme var. subglutinans Wollenweb. & Reinking e Fusarium neoceras Wollenweb. & Reinking.  \n\nA doença é também conhecida como Podridão dos grãos e Podridão do colmo. Este fungo causa podridão de colmo e pode ocasionar prejuízos quando a incidência do patógeno ocorrer próxima ao período do florescimento.\n\nO patógeno é relatado em todos os locais de cultivo do milho, principalmente nas regiões quente e seca. As espécies Ananas comosus (abacaxi) e Saccharum officinarum (cana-de-açúcar) são hospedeiras deste fungo.",
+        "symptoms": "A podridão de Fusarium é uma doença que pode ocorrer no colmo (podridão do colmo) e na espiga (podridão rosada da espiga, podridão dos grãos).\n\nCOLMO: Os tecidos internos do colmo apresentam colorações que variam de esbranquiçada a marrom-avermelhado. A doença inicia na base da planta e avança para a parte superior. Com o progresso da doença, pode ocorrer a quebra do colmo e até podridão da espiga.\n\nRAÍZES: Os tecidos internos das raízes apresentam coloração avermelhada.\n\nESPIGA: Dentre as doenças que ocorrem na espiga, esta é a mais freqüente. Os grãos, isolados ou em grupos, apresentam coloração avermelhada. Com o progresso da doença, há o crescimento de uma massa rosada cotonosa (micélio) sobre os grãos. O surgimento de estrias brancas em alguns grãos é comum, devido à ação do fungo sobre o pericarpo. Normalmente, a palha da espiga contaminada apresenta também coloração avermelhada.",
+        "bioecology": "Este fungo é um habitante natural do solo e permanece nos restos de cultura na forma de estruturas de resistência e conídios. O patógeno sobrevive também parasitando hospedeiros alternativos e pode ser encontrado em sementes. Os implementos agrícolas, vento, animais e sementes atuam disseminando o patógeno. \n\nA podridão de colmo geralmente está ligada ao ataque de nematóides ou pragas subterrâneas, estes debilitam a planta e causam ferimentos, favorecendo a penetração do fungo. Esta doença ocorre principalmente na época da polinização, quando períodos de seca vierem seguidos por períodos chuvosos. \n\nA podridão rosada é favorecida quando há ataque de insetos nas espigas e pelo excesso de chuva. A ação do fungo cessa quando a umidade dos grãos estiver em 18 a 19%.",
+        "control": "RESISTÊNCIA VARIETAL: Emprego de cultivares resistentes é o melhor método de controle.\n\nPRÁTICAS CULTURAIS: Utilização de adubação equilibrada, densidade de plantio adequada e não ultrapassar o período da colheita.",
+        "fungicides": []
+    },
+    {
+        "id": 4443,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Puccinia sorghi",
+        "commonNames": "Ferrugem-comum, Ferrugem",
+        "author": "Santos, C.E.N.; Mendes, M.A.S.",
+        "description": "A ferrugem-comum do milho (Zea mays L.) causada pelo fungo Puccinia sorghi Schwein. é considerada a ferrugem mais comum da cultura, ocorrendo em diversas regiões produtoras do Brasil, embora ocorra com maior incidência no Sul do país.",
+        "symptoms": "A ferrugem-comum manifesta-se em todas as fases de desenvolvimento das plantas de milho, porém causa maior redução da produção quando ocorre em plantas jovens.\n\nFOLHAS: A ferrugem-comum forma, nas plantas jovens, pústulas predominantemente alongadas, de coloração marrom-clara que escurecem à medida que as plantas se aproximam da fase de maturação. Clorose e morte de folhas podem ocorrer em ataques severos da doença.",
+        "bioecology": "O fungo Puccinia sorghi apresenta ciclo de vida completo, tendo como hospedeiro alternativo o trevo (Oxalis sp.). Os uredósporos são arredondados, bitunicados, de coloração ferruginosa. Os teliósporos são bicelulares, com leve constrição do septo e coloração marrom-escura. Temperaturas entre 16 e 23 °C e umidade relativa elevada favorecem a ocorrência da doença.",
+        "control": "Por se tratar de um hospedeiro obrigatório e apresentar ciclo de vida completo, as principais medidas de controle são a utilização de cultivares resistentes e a erradicação dos hospedeiros alternativos (trevos) próximos. A realização de rotação de cultura, evitando plantios sucessivos, também pode ser uma medida efetiva de controle.\n\nCONTROLE QUÍMICO: Em plantas jovens, o uso de fungicidas pode obter controle efetivo se administrado logo após o aparecimento das primeiras pústulas. Quando a ferrugem ocorre em plantas em final de ciclo não há redução significativa na produção, sendo o controle químico desnecessário.",
+        "fungicides": [
+            {
+                "id": 9313
+            },
+            {
+                "id": 13247
+            },
+            {
+                "id": 12657
+            },
+            {
+                "id": 8360
+            },
+            {
+                "id": 10085
+            },
+            {
+                "id": 11347
+            },
+            {
+                "id": 11200
+            },
+            {
+                "id": 5351
+            },
+            {
+                "id": 13156
+            },
+            {
+                "id": 5361
+            },
+            {
+                "id": 9844
+            },
+            {
+                "id": 15203
+            },
+            {
+                "id": 9750
+            },
+            {
+                "id": 5078
+            },
+            {
+                "id": 9960
+            },
+            {
+                "id": 15639
+            },
+            {
+                "id": 12212
+            },
+            {
+                "id": 8298
+            },
+            {
+                "id": 11204
+            },
+            {
+                "id": 10220
+            },
+            {
+                "id": 11438
+            },
+            {
+                "id": 14440
+            },
+            {
+                "id": 14205
+            },
+            {
+                "id": 7975
+            },
+            {
+                "id": 15705
+            },
+            {
+                "id": 16371
+            },
+            {
+                "id": 10751
+            },
+            {
+                "id": 10058
+            },
+            {
+                "id": 14021
+            },
+            {
+                "id": 9843
+            },
+            {
+                "id": 10463
+            },
+            {
+                "id": 8556
+            },
+            {
+                "id": 7847
+            },
+            {
+                "id": 12691
+            },
+            {
+                "id": 8885
+            },
+            {
+                "id": 14423
+            },
+            {
+                "id": 14424
+            },
+            {
+                "id": 5475
+            },
+            {
+                "id": 10086
+            },
+            {
+                "id": 13268
+            },
+            {
+                "id": 10962
+            },
+            {
+                "id": 9380
+            },
+            {
+                "id": 16546
+            },
+            {
+                "id": 8502
+            },
+            {
+                "id": 14204
+            }
+        ]
+    },
+    {
+        "id": 4461,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Pythium aphanidermatum",
+        "commonNames": "Tombamento, Podridão-do-colmo",
+        "author": "Santos, C.E.N.; Mendes, M.A.S.",
+        "description": "A podridão-do-colmo causada pelo fungo Pythium aphanidermatum (Edson) Fitzp., não é tão comum quanto às podridões de Diplodia e Fusarium. Esse patógeno é considerado um parasita não especializado, possuindo um grande número de hospedeiras.",
+        "symptoms": "COLMO: A podridão causada por Pythium aphanidermatum limita-se ao primeiro entrenó acima do solo. O fungo causa uma podridão aquosa, lembrando uma bacteriose, pode ocorrer o estrangulamento do colmo na região atacada, geralmente acarretando o tombamento da planta. As plantas tombadas permanecem verdes, devido ao fato de os feixes vasculares permanecerem intactos.\n\nO fungo também pode causar podridões das sementes e das raízes.\n\nOutra característica da doença é a queda repentina da planta, mesmo antes do florescimento.",
+        "bioecology": "Pythium aphanidermatum é um fungo habitante do solo e apresenta um elevado número de espécies hospedeiras, este permanece como saprófita a maior parte do ciclo de vida podendo infectar plantas vivas tornando-se parasita. Excesso de água no solo e temperaturas elevadas favorecem a ocorrência da doença.\n\nEm condições de alta umidade no solo e baixas temperaturas, o apodrecimento fica restrito às raízes e sementes.",
+        "control": "As principais medidas de controle a serem tomada são a drenagem do solo e o manejo adequado da água de irrigação devido ao fato de se tratar de um patógeno de solo que possui um grande número de espécies hospedeiras e passar a maior parte do seu ciclo de vida como saprófita. A rotação de cultura é uma medida questionável.\n\nCONTROLE QUÍMICO: O tratamento das sementes é recomendado para plantios em regiões frias.",
+        "fungicides": []
+    },
+    {
+        "id": 4462,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Rhizopus spp.",
+        "commonNames": "Mofo-preto",
+        "author": "Santos, C.E.N.; Mendes, M.A.S.",
+        "description": "Rhizopus spp. é o agente causal do mofo-preto do milho. Ocorre em sementes e plântulas em pré-emergência e está presente em sementes armazenadas.",
+        "symptoms": "SEMENTES: Nas sementes, causa um rápido apodrecimento, recobrindo-as com micélio do fungo e numerosos esporângios de coloração preta.",
+        "bioecology": "Rhizopus spp. produz esporos de resistência (zigósporos ou clamidósporos) que viabilizam a sua sobrevivência por vários meses no solo, podendo também ocorrer saprofiticamente. A disseminação a longas distâncias é feita principalmente por meio de sementes infectadas. \n\nTemperaturas entre 32 e 35 ºC favorecem a infecção de sementes e plântulas, não sendo indispensável a condição de umidade elevada.",
+        "control": "CONTROLE QUÍMICO: O tratamento de sementes com fungicida é recomendado.",
+        "fungicides": []
+    },
+    {
+        "id": 4476,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Helicotylenchus dihystera",
+        "commonNames": "Nematóide, Nematóide-espiralado",
+        "author": "Santos, M.F.; Mendes, M.A.S.",
+        "description": "Helicotylenchus dihystera (Cobb 1893) Sher 1961 tem como sinonímias Tylenchus olaae Cobb, 1906; Aphelenchus dubius var. peruensis Steiner, 1920; Tylenchus spiralis Cassidy, 1930; Helicotylenchus nannus Steiner, 1945 e Helicotylenchus crenatus Das, 1960.\n\nEste organismo é polífago, possuindo várias hospedeiras agronomicamente importantes, como banana, café, citros, cevada, ervilha, feijão, soja etc. e muitas plantas daninhas.",
+        "symptoms": "Está presente no sistema radicular, sendo classificado como ectoparasita.",
+        "bioecology": "Helicotylenchus dihystera pode sobreviver por vários meses no solo sem a presença da hospedeira. Nas inoculações experimentais realizadas em cana-de-açúcar verificou-se que o ciclo de vida varia de 35-37 dias à temperatura de 23-33 °C. A disseminação do nematóide ocorre principalmente por enxurradas, água de irrigação e implementos agrícolas.",
+        "control": "PRÁTICAS CULTURAIS: Recomenda-se a limpeza das ferramentas e máquinas agrícolas antes de executar trabalhos nas áreas ainda não infestadas.",
+        "fungicides": []
+    },
+    {
+        "id": 4477,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Penicillium digitatum",
+        "commonNames": "Bolor-verde",
+        "author": "Santos, M.F.; Mendes, M.A.S.",
+        "description": "Penicillium digitatum (Pers.:fr.) Sacc. afeta os grãos em condições de campo e no armazenamento, reduzindo a qualidade do produto.  O patógeno pode provocar a redução da germinação, perda da matéria seca e alteração do valor nutricional da semente.",
+        "symptoms": "ESPIGAS / SEMENTES: O sintoma típico da doença é a presença de um bolor verde entre os grãos e sobre o sabugo, resultado da esporulação do fungo.",
+        "bioecology": "Penicillium spp. está presente principalmente nos restos de cultura, e  a contaminação ocorre durante o florescimento, colheita, transporte e armazenamento. \n\nA germinação dos esporos de Penicillium spp. ocorre na faixa de temperatura entre 15 - 32 °C, sendo que o ótimo está entre 21 a 25 °C. Sob condições de armazenagem, as espécies de Penicillium proliferam caso ocorram condições de 80 a 90% de umidade relativa do ar intergranular e 15 a 18% de teor de umidade dos grãos.",
+        "control": "PRÁTICAS CULTURAIS: Recomenda-se não deixar passar o prazo de colheita, e essa operação deve ser realizada assim que o teor de umidade dos grãos permitir.\n\nAs impurezas, grãos danificados e materiais estranhos devem ser removidos, e a temperatura da massa dos grãos e a aeração do ambiente devem ser monitoradas. Recomenda-se também a adoção de medidas para o controle de insetos e roedores, pois geralmente a proliferação dos fungos está associada ao ataque dessas pragas.",
+        "fungicides": []
+    },
+    {
+        "id": 4478,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Penicillium oxalicum",
+        "commonNames": "Olho-azul, Bolor-azul",
+        "author": "Santos, M.F.; Mendes, M.A.S.",
+        "description": "Penicillium oxalicum Currie & Thom afeta os grãos em condições de campo e no armazenamento, reduzindo a qualidade do produto.  \n\nNos últimos anos, a incidência do patógeno tem aumentado nas áreas de cultivo, principalmente em períodos chuvosos.",
+        "symptoms": "ESPIGAS/SEMENTES: O sintoma típico da doença é a presença de um bolor azul entre os grãos e sobre o sabugo, resultado da esporulação do fungo. Às vezes, ocorrem o escurecimento do grão na região do embrião, denominado de \"olho azul\" do milho, e a formação de estrias brancas sobre os grãos. O patógeno pode provocar a redução da germinação, perda da matéria seca e alteração do valor nutricional da semente.",
+        "bioecology": "Penicillium spp. está presente principalmente nos restos de cultura, e a contaminação ocorre durante o florescimento, colheita, transporte e armazenamento. \n\nA germinação dos esporos de Penicillium spp. ocorre na faixa de temperatura entre 15 - 32 °C, sendo que o ótimo está entre 21 a 25 °C. Sob condições de armazenagem, as espécies de Penicillium proliferam caso ocorram condições de 80 a 90% de umidade relativa do ar intergranular e 15 a 18% de teor de umidade dos grãos.",
+        "control": "PRÁTICAS CULTURAIS: Recomenda-se não deixar passar o prazo de colheita, e essa operação deve ser realizada assim que o teor de umidade dos grãos permitir. \n\nAs impurezas, grãos danificados e materiais estranhos devem ser removidos, e a temperatura da massa dos grãos e a aeração do ambiente devem ser monitoradas. Recomenda-se também a adoção de medidas para o controle de insetos e roedores, pois geralmente a proliferação dos fungos está associada ao ataque dessas pragas.",
+        "fungicides": []
+    },
+    {
+        "id": 4479,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Pythium spp.",
+        "commonNames": "Podridão-de-raízes, Estiolamento",
+        "author": "Santos, C.E.N.; Mendes, M.A.S.",
+        "description": "A podridão-de-raízes causada por Pythium spp., causa prejuízos diretamente relacionados com o desenvolvimento das plantas. Sua importância varia de acordo com o grau de severidade, podendo, em casos severos, causar tombamento.",
+        "symptoms": "Inicialmente podem ser observadas lesões de coloração variando de marrom-claro a escuro, com perda da consistência dos tecidos. Em estágios mais avançados, as raízes apresentam grandes áreas atacadas, podendo causar o tombamento das plantas.",
+        "bioecology": "Os fungos do gênero Pythium são habitantes do solo e apresentam um grande número de espécies hospedeiras, estes podem permanecer como saprófitas. ou infectar plantas vivas, tornando-se parasita. Excesso de água no solo e temperaturas elevadas favorecem a ocorrência da doença.",
+        "control": "As principais medidas de controle a serem tomadas são a drenagem do solo e o manejo adequado da água de irrigação. Devido ao fato de se tratar de um patógeno de solo que possui um grande número de espécies hospedeiras e poder ocorrer como saprófita. A rotação de cultura é uma medida questionável.\n\nCONTROLE QUÍMICO: O tratamento das sementes é recomendado para plantios em regiões frias.",
+        "fungicides": [
+            {
+                "id": 5387
+            },
+            {
+                "id": 12859
+            }
+        ]
+    },
+    {
+        "id": 4480,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Rhizoctonia solani",
+        "commonNames": "Tombamento, Damping-off",
+        "author": "Santos, C.E.N.; Mendes, M.A.S.",
+        "description": "O fungo Rhizoctonia solani J.G. Kühn ocorre na cultura do milho (Zea mays L.), juntamente com alguns outros patógenos presentes no solo, que causando podridões radiculares no início do desenvolvimento da plântula e provocando redução no vigor e na germinação da semente. A incidência e a severidade do ataque estão associados às condições do solo e a seqüência de culturas cultivadas na área.",
+        "symptoms": "RAÍZES: As infecções radiculares caracterizam-se por lesões nas raízes primárias e secundárias, que posteriormente tornam-se escuras e necrosadas. \n\nPARTE AÉREA: Na parte aérea ocorre murcha e subdesenvolvimento da planta, em casos severos, ocorre tombamento.\n\nSEMENTES: Causa redução na germinação e no vigor das sementes.",
+        "bioecology": "A incidência e a severidade estão associadas às condições do solo, principalmente umidade e temperatura elevadas e má drenagem. O desenvolvimento no solo se dá pela associação com a matéria orgânica morta. A sobrevivência em condições desfavoráveis é viabilizada pela formação de escleródios, estruturas de resistência de coloração escura e formato irregular.",
+        "control": "O tratamento fungicida das sementes de milho objetiva principalmente o controle de patógenos de solo, como é o caso de Rhizoctonia solani. Recomenda-se que o tratamento das sementes seja realizado no momento da embalagem para venda. As sementes tratadas devem ser coradas com alguma substância química para alertar sobre o perigo do consumo na alimentação humana e animal.",
+        "fungicides": [
+            {
+                "id": 13230
+            }
+        ]
+    },
+    {
+        "id": 4515,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Peronosclerospora sorghi",
+        "commonNames": "Míldio-do-sorgo, Míldio-do-sorgo-em-milho",
+        "author": "Santos, M.F.; Mendes, M.A.S.",
+        "description": "Peronosclerospora sorghi (Weston & Uppal) C.G. Shaw tem como sinonímia Sclerospora sorghi W. Weston & Uppal. Este fungo afeta as folhas, causando clorose, e o colmo, reduzindo a produtividade da cultura.\n\nNo Brasil, os prejuízos econômicos ocasionados pela doença são pouco significativos, exceto na região sudoeste do Paraná, nos plantios após o mês de janeiro.\n\nAlém do milho, o fungo ataca a cultura do sorgo, capim-maçambará, Sorghum halepense e outras gramíneas. O patógeno está presente em todas as regiões produtoras de milho, principalmente nos estados do Paraná, São Paulo e Minas Gerais.",
+        "symptoms": "Plantas doentes apresentam pendões com proliferação de estruturas filóides e baixa produtividade.\n\nFOLHAS: O fungo, quando sistêmico, pode causar clorose e, às vezes, ocasionar a formação de estrias e faixas brancas na superfície das folhas, as quais são mais estreitas e eretas em relação às plantas sadias. As folhas posicionadas na parte inferior da planta apresentam sintomas de \"meia folha doente\". Quando as condições ambientais são favoráveis ao patógeno, ocorre o desenvolvimento das estruturas do fungo, resultando em uma eflorescência esbranquiçada em ambos os lados do limbo foliar das primeiras folhas da planta.\n\nCOLMOS / RAÍZES: As plantas infectadas apresentam colmos mais finos, resultando em acamamento das plantas e maior número de raízes adventícias.",
+        "bioecology": "Os oósporos do fungo sobrevivem no solo por vários anos e infectam sistemicamente as plântulas de milho, já os esporângios, produzidos em plantas hospedeiras, infectam as folhas desenvolvidas. \n\nAs hifas e esporângios são disseminados pela semente e vento, respectivamente. Para que  ocorra a germinação dos esporângios, a temperatura não pode ser superior a 20 °C.",
+        "control": "RESISTÊNCIA: Recomenda-se a utilização de cultivares resistentes.\n\nPRÁTICAS CULTURAIS: O produtor deve retirar e destruir as plantas doentes e os restos culturais. Recomenda-se também a rotação de culturas e a eliminação das plantas hospedeiras próximas à lavoura. \n\nCONTROLE QUÍMICO: Recomenda-se o tratamento das sementes com fungicidas sistêmicos.",
+        "fungicides": []
+    },
+    {
+        "id": 4516,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Phaeosphaeria maydis",
+        "commonNames": "Mancha-de-Phaeosphaeria, Mancha-foliar",
+        "author": "Santos, M.F.; Mendes, M.A.S.",
+        "description": "Phaeosphaeria maydis (Henn.) Rane ataca as folhas, causando mancha foliar. O plantio de cultivares susceptíveis em locais onde as condições ambientais favorecem o fungo tem ocasionado perdas na produção em cerca de 60%.  \n\nA mancha-de-Phaeosphaeria, a partir de 1990, tem aumentado de importância e incidência, e atualmente está presente em todas as áreas cultivadas com milho no país.\n\nNão existem relatos de outras hospedeiras deste fungo.",
+        "symptoms": "Além dos sintomas abaixo descritos, pode também ocorrer a redução do ciclo da planta.\n\nFOLHAS: As lesões são inicialmente aquosas e de coloração verde-clara, depois tornam-se necróticas, apresentando, às vezes, halos amarelados. No centro da lesão é possível observar pontos escuros que são os picnídios, estruturas do fungo. No início, as lesões são pequenas e aparecem nas folhas inferiores. Posteriormente, a doença atinge toda a planta, as lesões aumentam de tamanho e podem coalescer, causando seca parcial ou total das folhas. Pode também ocorrer a queda das folhas.\n\nCOLMO: Quando a infecção é alta, a planta tem dificuldade em conduzir o nitrogênio para os grãos, ficando acumulado no colmo.\n\nSEMENTES: Em condições ideais ao patógeno, pode ocorrer redução do tamanho dos grãos.",
+        "bioecology": "O fungo sobrevive principalmente em restos de cultura O vento e o respingo de chuva atuam disseminando o patógeno. Umidade relativa acima de 60%, precipitações pluviométricas elevadas e temperaturas noturnas baixas favorecem o desenvolvimento da doença. A doença é considerada mais severa nos meses de dezembro a maio, não sendo comum nos meses de julho a outubro.",
+        "control": "RESISTÊNCIA VARIETAL: A utilização de cultivares resistentes é o melhor método de controle.\n\nPRÁTICAS CULTURAIS: Evitar o plantio da cultura nos períodos favoráveis à doença e incorporar os restos de cultura quando observar alta incidência do fungo.",
+        "fungicides": [
+            {
+                "id": 14252
+            },
+            {
+                "id": 15314
+            },
+            {
+                "id": 15006
+            },
+            {
+                "id": 11129
+            },
+            {
+                "id": 17411
+            },
+            {
+                "id": 11450
+            },
+            {
+                "id": 16468
+            },
+            {
+                "id": 19467
+            },
+            {
+                "id": 10353
+            },
+            {
+                "id": 16553
+            },
+            {
+                "id": 12120
+            },
+            {
+                "id": 14026
+            },
+            {
+                "id": 12682
+            },
+            {
+                "id": 14607
+            },
+            {
+                "id": 16313
+            },
+            {
+                "id": 11874
+            },
+            {
+                "id": 5400
+            },
+            {
+                "id": 16382
+            },
+            {
+                "id": 14373
+            },
+            {
+                "id": 8374
+            },
+            {
+                "id": 12912
+            },
+            {
+                "id": 12251
+            },
+            {
+                "id": 10983
+            },
+            {
+                "id": 18344
+            },
+            {
+                "id": 16318
+            },
+            {
+                "id": 5477
+            },
+            {
+                "id": 12334
+            },
+            {
+                "id": 9899
+            },
+            {
+                "id": 14916
+            },
+            {
+                "id": 11278
+            },
+            {
+                "id": 8490
+            },
+            {
+                "id": 16377
+            },
+            {
+                "id": 5092
+            },
+            {
+                "id": 12118
+            },
+            {
+                "id": 8392
+            },
+            {
+                "id": 14246
+            },
+            {
+                "id": 9231
+            },
+            {
+                "id": 16407
+            },
+            {
+                "id": 10173
+            },
+            {
+                "id": 7923
+            },
+            {
+                "id": 14162
+            },
+            {
+                "id": 8447
+            },
+            {
+                "id": 9099
+            },
+            {
+                "id": 11617
+            },
+            {
+                "id": 11038
+            },
+            {
+                "id": 12154
+            },
+            {
+                "id": 11338
+            },
+            {
+                "id": 5339
+            },
+            {
+                "id": 11924
+            },
+            {
+                "id": 12722
+            },
+            {
+                "id": 10311
+            },
+            {
+                "id": 10346
+            },
+            {
+                "id": 11384
+            },
+            {
+                "id": 11088
+            },
+            {
+                "id": 11155
+            },
+            {
+                "id": 8926
+            },
+            {
+                "id": 15327
+            },
+            {
+                "id": 14280
+            },
+            {
+                "id": 11618
+            },
+            {
+                "id": 14422
+            },
+            {
+                "id": 15507
+            },
+            {
+                "id": 20981
+            },
+            {
+                "id": 18128
+            },
+            {
+                "id": 15159
+            },
+            {
+                "id": 8855
+            },
+            {
+                "id": 14245
+            },
+            {
+                "id": 13623
+            },
+            {
+                "id": 11776
+            },
+            {
+                "id": 10914
+            },
+            {
+                "id": 9829
+            },
+            {
+                "id": 5348
+            },
+            {
+                "id": 5146
+            },
+            {
+                "id": 15297
+            },
+            {
+                "id": 15045
+            },
+            {
+                "id": 11746
+            },
+            {
+                "id": 14576
+            },
+            {
+                "id": 14578
+            },
+            {
+                "id": 14597
+            },
+            {
+                "id": 18715
+            },
+            {
+                "id": 10333
+            },
+            {
+                "id": 14999
+            },
+            {
+                "id": 5457
+            },
+            {
+                "id": 10578
+            },
+            {
+                "id": 14924
+            },
+            {
+                "id": 7877
+            },
+            {
+                "id": 12044
+            },
+            {
+                "id": 17593
+            },
+            {
+                "id": 9782
+            },
+            {
+                "id": 13928
+            },
+            {
+                "id": 10524
+            },
+            {
+                "id": 7840
+            },
+            {
+                "id": 10964
+            },
+            {
+                "id": 9783
+            },
+            {
+                "id": 11876
+            },
+            {
+                "id": 21254
+            },
+            {
+                "id": 10909
+            },
+            {
+                "id": 12292
+            },
+            {
+                "id": 5134
+            },
+            {
+                "id": 8263
+            },
+            {
+                "id": 16599
+            },
+            {
+                "id": 15161
+            },
+            {
+                "id": 10753
+            },
+            {
+                "id": 18196
+            },
+            {
+                "id": 10769
+            },
+            {
+                "id": 14238
+            },
+            {
+                "id": 5289
+            },
+            {
+                "id": 8372
+            },
+            {
+                "id": 15299
+            },
+            {
+                "id": 12888
+            },
+            {
+                "id": 13119
+            },
+            {
+                "id": 13988
+            },
+            {
+                "id": 13234
+            },
+            {
+                "id": 13187
+            },
+            {
+                "id": 8375
+            },
+            {
+                "id": 10193
+            },
+            {
+                "id": 11393
+            },
+            {
+                "id": 13629
+            },
+            {
+                "id": 13627
+            },
+            {
+                "id": 11613
+            },
+            {
+                "id": 16940
+            },
+            {
+                "id": 12666
+            },
+            {
+                "id": 8601
+            },
+            {
+                "id": 12913
+            },
+            {
+                "id": 9114
+            }
+        ]
+    },
+    {
+        "id": 4517,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Stenocarpella maydis",
+        "commonNames": "Podridão-branca-das-espigas, Podridão-de-Diplodia",
+        "author": "Hernández, A.G.; Mendes, M.A.S.",
+        "description": "Stenocarpella maydis (Berk.) B.C. Sutton tem como sinônimos Diplodia maydicola Speg., Diplodia maydis (Berk.) Sacc., Diplodia zeae (Schw.) Lev., Diplodia zeae-maydis Mechtijeva, Hendersonia zeae (Schw.) Haszl., Macrodiplodia zeae (Schw.) Petrak & H. Syd. apud Petrak, Phaeostagonosporopsis zeae (Schw.) Woronichin, Sphaeria maydis Berk. e Sphaeria zeae Schw.\n\nA podridão-branca-da-espiga é considerada a mais destrutiva dentre as que atacam as espigas do milho, e é causada por duas espécies de fungo: Stagonospora maydis e S. macrospora Earle.\n\nA doença está amplamente distribuída em nível mundial, sendo particularmente destrutiva em regiões com alto regime pluviométrico. Embora esteja distribuída em quase todo o território brasileiro, as maiores incidências ocorrem nos estados da região Sul.\n\nOBS: O fungo Diplodia maydis foi segregado para o gênero Stenocarpella por B.C. Sutton em 1980, razão pela qual o nome atual que deve ser utilizado é Stenocarpella maydis (Berk.) B.C. Sutton.",
+        "symptoms": "ESPIGAS: As folhas das espigas infectadas no começo da sua formação apresentam um aspecto alvejado ou cor de palha. Quando a infecção acontece durante as duas primeiras semanas após a floração, a espiga completa torna-se marrom-acinzentada e enrugada muito rápida e termina apodrecendo totalmente. A infecção geralmente começa na base da espiga, propagando-se progressivamente para o ápice. As espigas mais leves ficam em posição vertical, favorecendo assim a entrada da água da chuva e com isto criando condições propícias para o desenvolvimento do fungo, que ataca todas as folhas da espigas, as quais aparecem grudadas entre si, por causa do crescimento do micélio entre elas. Observa-se, também, o aparecimento de picnídios negros sobre as folhas da espiga, as brácteas florais, o tecido do sabugo e nas laterais dos grãos. Se a infecção é mais tardia, as espigas não mostram sintomas externos, mas o fungo pode encontrar-se crescendo entre os grãos, sendo que estes apresentam o ápice descolorido.\n\nSEMENTES: Os grãos apresentam uma coloração pálida e grande quantidade de picnídios pretos na sua superfície e no sabugo.",
+        "bioecology": "Os picnídios do fungo podem sobreviver nos restos de colheita no solo, e como esporos e micélio sobre as sementes.\n\nOs esporos são expelidos através do ostíolo quando há condições favoráveis de alta umidade, sendo então disseminados pelos respingos da chuva e levados pelas correntes do vento, ou provavelmente pelos insetos para as espigas em formação.\n\nO desenvolvimento da doença é favorecido por um ambiente de secura no começo da lavoura, seguido de um período chuvoso antes e depois da floração, permanecendo as espigas suscetíveis até umas três semanas mais tarde.\n\nO ataque de pássaros à lavoura, alimentando-se dos grãos do extremo apical da espiga, favorece também a entrada do fungo e o posterior desenvolvimento da doença. Os híbridos com pericarpo fino são bastante suscetíveis.",
+        "control": "Uso de variedades e híbridos resistentes. Uma adequada programação da época da semeadura, visando que a floração e colheita não coincidam com a época mais úmida, é também uma medida eficiente para evitar ataques mais severos dos fungos causadores da doença.\n\nDevido ao ataque do fungo, o desenvolvimento da doença pode continuar a progredir ainda após a colheita se as espigas ou grãos são armazenados com excesso de umidade, é de grande importância que tanto as espigas quanto os grãos sejam secados até atingirem menos de 15% de umidade.",
+        "fungicides": []
+    },
+    {
+        "id": 4546,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Ustilago maydis",
+        "commonNames": "Carvão-comum",
+        "author": "Santos, C.E.N.; Mendes, M.A.S.",
+        "description": "O carvão-comum do milho (Zea mays L.), causado pelo fungo Ustilago maydis (DC) Cda., ocorre em todas as regiões produtoras de milho do país, contudo é uma doença de importância secundária, ocorrendo comumente em plantas estressadas.",
+        "symptoms": "ESPIGAS: O fungo Ustilago maydis causa galhas em todos os órgãos aéreos da planta, sendo mais comum nas espigas. Inicialmente, as galhas são recobertas por uma membrana branca e brilhante. Com a evolução da doença forma-se uma massa de esporos pretos (teliósporos), que são liberados com o rompimento da membrana.",
+        "bioecology": "O fungo Ustilago maydis é disseminado principalmente pelo vento e por respingos de água da chuva, podendo sobreviver no solo na forma de teliósporos. Baixa umidade e temperaturas entre 26 e 34 ° C favorecem na ocorrência da doença. O milho é o único hospedeiro desse patógeno.",
+        "control": "PRÁTICAS CULTURAIS: É recomendado evitar injúrias nos tratos culturais, controlar as lagartas que afetam as espigas, realizar rotação de cultura em áreas com elevada incidência da doença e evitar adubação com dose excessiva de nitrogênio.\n\nEm culturas bem conduzidas, praticamente não há ocorrência do carvão-comum.",
+        "fungicides": []
+    },
+    {
+        "id": 4551,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Colletotrichum graminicola",
+        "commonNames": "Antracnose-do-colmo, Podridão-de-Colletotrichum",
+        "author": "Hernández, A.G.; Mendes, M.A.S.",
+        "description": "O fungo Colletotrichum graminicola (Ces.) G. W. Wils. é conhecido pelos sinônimos de Colletotrichum sublineola Henn. in Kab & Bubák e Vermicularia graminicola Westend.\n\nDesde a década de 70, tem se convertido na doença predominante nessa cultura no sudeste dos Estados Unidos e na metade sul do cinturão do milho.\n\nA doença manifesta-se com maior freqüência nas folhas e no colmo, mas o fungo pode infectar todas as partes da planta, incluindo os grãos e as raízes.\n\nEste patógeno encontra-se associado à cultura do milho em 14 países (África do Sul, Brasil, Gana, Índia, Estados Unidos, Malaui, Nepal, Nigéria, Nova Zelândia, Reino Unido, Sierra Leoa, Tanzânia, Zâmbia e Zimbábue).\n\nColletotrichum graminicola já foi constatado em 40 países, parasitando 88 gêneros de Gramineae, dois de Leguminosae, e um de Cyperaceae, Euphorbiaceae e Iridaceae, além do milho.",
+        "symptoms": "As infecções do colmo são evidentes em vários estádios do crescimento, dependendo da suscetibilidade do híbrido ou variedade. Os tecidos inferiores do colmo das plantas altamente suscetíveis podem ser tão severamente apodrecidos que as plantas morrem antes da polinização. No entanto, a maioria dos híbridos não são afetados até pouco antes da senescência normal. Com freqüência, as partes acima das espigas descolorem-se e morrem 4-6 semanas após a polinização, enquanto que as partes abaixo destas permanecem verdes.\n\nAs perdas de rendimento podem variar de uma estação ou de uma região para outra, alcançando valores entre 10-20% em híbridos suscetíveis.\n\nFOLHAS: As duas ou três folhas superiores amarelecem ou avermelham, dobram-se e morrem. A descoloração das folhas superiores ocorre com freqüência e quase ao mesmo tempo em que nas folhas inferiores. Em outros casos, as plantas completas podem morrer prematuramente e mais tarde dobrar-se. A morte e a dobra do colmo com freqüência são expressadas mais tarde do que a morte descendente do topo.\n\nCOLMO: Lesões aquosas estreitas, verticais ou ovais na casca, tornando-se douradas a marrom-avermelhadas e finalmente marrom-escuras no final do ciclo, e podem cobrir os internós ou o colmo completo. Com freqüência, são encontradas manchas negras (acérvulos) na casca do colmo, associadas com a produção de esporos pelo fungo. As lesões coalescem formando grandes manchas ou estrias marrom-escuras a negro-brilhante, que podem ser deprimidas. As lesões externas são acompanhadas por uma descoloração marrom ou negra do tecido da medula, começando nos nós. Em alguns genótipos, a medula pode amolecer, liquidificar e facilmente se desfazer.",
+        "bioecology": "O fungo sobrevive como conídios nos acérvulos sobre os restos de folhas e colmos, e como células miceliais de repouso dormentes nos restos do colmo. Os conídios são o inóculo primário para a fase da queima foliar, mas a origem do inóculo primário para a fase da podridão do colmo não está totalmente compreendida.\n\nA doença pode disseminar pelas sementes e pelo vento que carrega os conídios desde a superfície dos acérvulos até os campos vizinhos. O solo aderido ao maquinário e implementos agrícolas usados nas lavouras de milho infectadas por C. graminicola é também outra via de disseminação.\n\nO desenvolvimento da doença é favorecido por condições de alta umidade.",
+        "control": "O uso de variedades ou híbridos resistentes permite o cultivo em áreas infectadas.\n\nDeve evitar-se o cultivo direto em áreas onde ocorre a doença, pois essa prática ajudaria a aumentar a densidade de inóculo no solo. A rotação de culturas, a limpeza e o enterramento profundo dos restos de cultura levam a uma redução da fonte de inóculo.",
+        "fungicides": []
+    },
+    {
+        "id": 4552,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Physopella zeae",
+        "commonNames": "Ferrugem-tropical",
+        "author": "Santos, M.F.; Mendes, M.A.S.",
+        "description": "Physopella zeae é considerada uma doença de importância recente para a cultura do milho, principalmente nas regiões Centro-Oeste e Sudeste. A doença pode ocorrer em qualquer fase de desenvolvimento da planta, sendo que a utilização de híbridos susceptíveis tem favorecido a ação do patógeno.\n\nNão existem relatos de outras hospedeiras para este patógeno.",
+        "symptoms": "Os sintomas da doença são observados principalmente sobre as folhas na forma de pústulas. A queda de produção é maior quando a infecção ocorre em plantas jovens e, aliado a isto, tiver condições climáticas favoráveis ao desenvolvimento do patógeno. \n\nFOLHAS: As pústulas são de cor creme e estão distribuídas em grupo na face superior da folha. Posteriormente, as pústulas passam a ter cor púrpura, com o centro claro. Possuem o formato arredondado ou oval, e na fase mais avançada da doença, são circundadas por halos escuros. Quando o ataque é severo, as pústulas coalescem, levando à queda prematura das folhas.",
+        "bioecology": "Este fungo é um parasita obrigatório, e a disseminação ocorre principalmente pelo vento. As plantações localizadas em regiões de baixas altitudes, quentes e úmidas estão mais predispostas a esta doença. A ferrugem tropical ocorre nos plantios tardios, a partir de outubro. Até o momento, a literatura cita a existência de duas raças desse patógeno.",
+        "control": "RESISTÊNCIA VARIETAL: A utilização de cultivares resistentes é o melhor método de controle.\n\nPRÁTICAS CULTURAIS: Evitar os plantios da cultura nos períodos favoráveis à doença.",
+        "fungicides": [
+            {
+                "id": 10954
+            },
+            {
+                "id": 5260
+            },
+            {
+                "id": 9274
+            }
+        ]
+    },
+    {
+        "id": 4553,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Pratylenchus brachyurus",
+        "commonNames": "Nematóide-das-lesões",
+        "author": "Santos, C.E.N.; Mendes, M.A.S.",
+        "description": "O nematóide Pratylenchus brachyurus (Godfrey) Filipjev & Steckhoven é o agente causal da pratilencose na cultura do milho. É um patógeno de considerável importância econômica devido a sua ampla distribuição geográfica e ao grande número de plantas hospedeiras.\n\nNa cultura do milho as perdas causadas por nematóides já foram quantificadas em 39% da produção.",
+        "symptoms": "RAÍZES: Nas raízes ocorrem lesões, por onde penetram fungos e bactérias que causam necroses.\n\nPARTE AÉREA: As plantas infectadas apresentam tamanho reduzido, folhas cloróticas e murcha. \n\nNo campo, os sintomas ocorrem em reboleiras.",
+        "bioecology": "O gênero Pratylenchus tem uma grande gama de hospedeiros, incluindo ervas daninhas, ornamentais, hortaliças, culturas anuais e perenes, essências florestais, etc. \n\nSão nematóides endoparasitas migradores que se movem livremente dentro das raízes e entre as raízes e o solo. As fêmeas reproduzem por partenogênese mitótica, sendo de difícil determinação a quantidade de ovos produzidos pela fêmea, pois deposita os ovos um a um nos tecidos do hospedeiro ou no solo. Em solos de pousio, a longevidade desse nematóide pode ser de até 21 meses. \n\nA dinâmica da população de Pratylenchus brachyurus é determinada pelas características do solo, tais como temperatura, umidade, granulometria, teor de matéria orgânica e composição da população de microorganismos.",
+        "control": "Rotação de cultura com espécies não hospedeiras.",
+        "fungicides": []
+    },
+    {
+        "id": 4554,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Pratylenchus zeae",
+        "commonNames": "Nematóide-das-lesões",
+        "author": "Santos, C.E.N.; Mendes, M.A.S.",
+        "description": "O nematóide Pratylenchus zeae Graham é o agente causal da pratilencose na cultura do milho. É um patógeno de ampla distribuição geográfica e possui um grande número de plantas hospedeiras, principalmente gramíneas e hortaliças.\n\nNa cultura do milho, as perdas causadas por nematóides já foram quantificadas em 39% da produção.",
+        "symptoms": "RAÍZES: Nas raízes ocorrem lesões, por onde penetram fungos e bactérias que causam necroses.\n\nPARTE AÉREA: As plantas infectadas apresentam tamanho reduzido, folhas cloróticas e murcha. \n\nNo campo, os sintomas ocorrem em reboleiras.",
+        "bioecology": "O gênero Pratylenchus tem uma grande gama de hospedeiros, incluindo ervas daninhas, ornamentais, hortaliças, culturas anuais e perenes, essências florestais, etc. \n\nSão nematóides endoparasitas migradores, que se movem livremente dentro das raízes e entre as raízes e o solo. As fêmeas reproduzem por partenogênese mitótica, sendo de difícil determinação a quantidade de ovos produzidos pela fêmea, pois esta deposita os ovos um a um nos tecidos do hospedeiro ou no solo. Em solos de pousio, a longevidade desse nematóide pode ser de até 21 meses. \n\nA dinâmica da população de Pratylenchus zeae é determinada pelas características do solo, tais como temperatura, umidade, granulometria, teor de matéria orgânica e composição da população de microorganismos.",
+        "control": "As principais medidas de controle são o uso de mudas sadias e de boa qualidade e a realização de rotação de cultura com espécies não hospedeiras.",
+        "fungicides": [
+            {
+                "id": 14066
+            }
+        ]
+    },
+    {
+        "id": 4561,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Exserohilum turcicum",
+        "commonNames": "Mancha-foliar, Helminthosporium",
+        "author": "Santos, M.F.; Mendes, M.A.S.",
+        "description": "Exserohilum turcicum, fase assexuada (anaformo) do fungo, tem como sinônimos Bipolaris turcica (Pass.) Shoemaker,  Drechslera turcica (Pass.) Subramanian & P.C. Jain e Helminthosporium turcicum Pass. \n\nA fase sexuada (teleomorfo) correspondente é Setosphaeria turcica (Luttrell) K.J. Leonard & E.G. Suggs, o qual tem como sinônimos Trichometasphaeria turcica Luttrell,    Trichometasphaeria turcica f. sp. sorghi Bergquist & Masias e Trichometasphaeria turcica f. sp. zeae Bergquist & Masias.\n\nExserohilum turcicum é responsável por uma das doenças mais importante na cultura do milho. No Brasil, a maioria das cultivares de milho-pipoca são suscetíveis ao fungo.\n\nO fungo está presente na maioria das áreas de cultivo de milho no país, principalmente em regiões altas (chapadas), onde é observado o ano inteiro.  Sorghum spp. também é afetado por esta doença.",
+        "symptoms": "Os sintomas da doença ocorrem principalmente nas folhas, onde é mais facilmente identificada. O prejuízo na cultura é maior quando o patógeno infecta a planta no período anterior ao embonecamento.\n\nFOLHAS: As lesões necróticas de formato elíptico, variando de 2,5 a 15 cm comprimento, possuem coloração verde-cinza  ou marrom e iniciam nas folhas inferiores da planta. Alguns autores descrevem a lesão como tendo coloração palha e bordas bem definidas e que posteriormente escurecem devido à frutificação do fungo. As lesões podem coalescer se a infecção for severa.",
+        "bioecology": "O fungo sobrevive em restos culturais na forma de conídios, micélio e clamidósporo. O vento e a chuva são responsáveis pela disseminação dos esporos. \n\nA temperatura entre 18 e 27 °C favorecem o desenvolvimento da doença, principalmente se vier acompanhada de períodos de alta umidade relativa. \n\nOs plantios de agosto e setembro, assim como os plantios de safrinha realizados após dezembro, são períodos considerados favoráveis à ocorrência da doença. A fase crítica da cultura ao fungo corresponde o período anterior ao embonecamento, principalmente se as condições ambientais forem favoráveis à doença.",
+        "control": "RESISTÊNCIA VARIETAL: Emprego de cultivares resistentes é o melhor método de controle e estão disponíveis no mercado.\n\nPRÁTICAS CULTURAIS: Incorporação dos restos de cultura e utilização de adubação equilibrada, evitando o excesso de nitrogênio. O plantio em locais ou  períodos onde as condições climáticas são favoráveis ao desenvolvimento da doença deve ser evitado.\n\nCONTROLE QUÍMICO: Pulverizações foliares com produtos químicos é recomendado para materiais de alto valor econômico. O fungicida tebuconazole  é citado na literatura para o controle desta doença.",
+        "fungicides": [
+            {
+                "id": 10504
+            },
+            {
+                "id": 11293
+            },
+            {
+                "id": 9275
+            },
+            {
+                "id": 9224
+            },
+            {
+                "id": 9307
+            }
+        ]
+    },
+    {
+        "id": 4581,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Puccinia polysora",
+        "commonNames": "Ferrugem-polisora, Ferrugem",
+        "author": "Santos, C.E.N.; Mendes, M.A.S.",
+        "description": "A ferrugem-polisora do milho (Zea mays L.), causada pelo fungo Puccinia polysora Underw., é a mais severa e destrutiva doença na cultura do milho na região central do Brasil, ocorrendo durante todo o ano agrícola nas regiões Centro-Oeste e Sudeste, podendo causar grandes perdas em cultivares que não apresenta resistência e até perdas totais da plantação quando esta ocorre antes do florescimento.",
+        "symptoms": "FOLHAS: Puccinia polysora produz pústulas pequenas, circulares, de coloração laranja a avermelhada mais frequentemente na face superior da folhas. Dependendo da severidade do ataque, essas pústulas podem ocorrer também na bainha. Á medida que a planta se aproxima da fase de maturação, as pústulas apresentam-se densamente distribuídas em ambas as faces das folhas. Os uredósporos do fungo são amarelos, binucleados, elipsóides a obovóides, com paredes esparsamente equinuladas. Os teliósporos são bicelulares, com septo constricto, de coloração marrom-clara, apresentando extremidades arredondadas; os teliósporos são raros na natureza.\n\nEm cultivares susceptíveis é comum a ocorrência de morte prematura em decorrência da destruição foliar.",
+        "bioecology": "O fungo Puccinia polysora é disseminado pelos uredósporos que são carreados principalmente pelo vento. Após o aparecimento das primeiras pústulas ocorre uma rápida multiplicação do potencial de inóculo no campo enquanto as condições climáticas permanecem favoráveis. Temperaturas em torno de 27 °C e umidade relativa elevada favorecem a ocorrência da doença.",
+        "control": "O uso de cultivares resistentes é o método de controle mais eficiente em locais e épocas favoráveis à ocorrência da doença.\n\nCONTROLE QUÍMICO: Pulverizações com fungicidas são vantajosas apenas nas fases iniciais da doença, a partir do aparecimento dos primeiros sintomas, evitando o aumento do potencial de inóculo na áreas. \n\nPRÁTICAS CULTURAIS: A rotação de cultura, evitando plantios sucessivos,  também apresenta-se como uma medida de controle efetiva.",
+        "fungicides": [
+            {
+                "id": 12894
+            },
+            {
+                "id": 13538
+            },
+            {
+                "id": 12905
+            },
+            {
+                "id": 11138
+            },
+            {
+                "id": 11156
+            },
+            {
+                "id": 14469
+            },
+            {
+                "id": 13215
+            },
+            {
+                "id": 11376
+            },
+            {
+                "id": 9347
+            },
+            {
+                "id": 11198
+            },
+            {
+                "id": 11381
+            },
+            {
+                "id": 9887
+            },
+            {
+                "id": 13915
+            },
+            {
+                "id": 8440
+            },
+            {
+                "id": 14185
+            },
+            {
+                "id": 8962
+            },
+            {
+                "id": 10283
+            },
+            {
+                "id": 8492
+            },
+            {
+                "id": 11772
+            },
+            {
+                "id": 14324
+            },
+            {
+                "id": 12647
+            },
+            {
+                "id": 13150
+            },
+            {
+                "id": 13331
+            },
+            {
+                "id": 13209
+            },
+            {
+                "id": 14580
+            }
+        ]
+    },
+    {
+        "id": 4858,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Cercospora zeae-maydis",
+        "commonNames": "Cercosporiose",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": [
+            {
+                "id": 12723
+            },
+            {
+                "id": 10065
+            },
+            {
+                "id": 11887
+            },
+            {
+                "id": 18113
+            },
+            {
+                "id": 11310
+            },
+            {
+                "id": 13180
+            }
+        ]
+    },
+    {
+        "id": 5063,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Didymella bryoniae",
+        "commonNames": "Crestamento-gomoso-do-caule, Podridão-amarga",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": []
+    },
+    {
+        "id": 5065,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Helminthosporium maydis",
+        "commonNames": "Helmintosporiose",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": []
+    },
+    {
+        "id": 5278,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Penicillium spp.",
+        "commonNames": "Fungo-de-armazenamento",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": []
+    },
+    {
+        "id": 5284,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Phoma sorghina",
+        "commonNames": "Complexo mancha branca",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": [
+            {
+                "id": 5426
+            }
+        ]
+    },
+    {
+        "id": 5285,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Phyllosticta maydis",
+        "commonNames": "Complexo mancha branca",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": []
+    },
+    {
+        "id": 5286,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Pantoea ananatis",
+        "commonNames": "Complexo mancha branca",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": [
+            {
+                "id": 18452
+            },
+            {
+                "id": 11498
+            }
+        ]
+    },
+    {
+        "id": 5352,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Fusarium verticilioides",
+        "commonNames": "Podridão-de-raízes",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": []
+    },
+    {
+        "id": 5663,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Pectobacterium chrysanthemi",
+        "commonNames": "Podridão-do-colmo",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": [
+            {
+                "id": 5152
+            }
+        ]
+    },
+    {
+        "id": 5701,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Fusarium graminearum",
+        "commonNames": "Podridão-rosada-da-pontada-da-espiga, Podridão-de-giberela",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": []
+    },
+    {
+        "id": 5756,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Alternaria alternata",
+        "commonNames": "Mofo preto",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": []
+    },
+    {
+        "id": 5757,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Phoma spp.",
+        "commonNames": "Tombamento",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": []
+    },
+    {
+        "id": 5920,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Drechslera tritici-repentis",
+        "commonNames": "Mancha-amarela",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": []
+    },
+    {
+        "id": 5921,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Blumeria graminis f.sp. tritici",
+        "commonNames": "Oídio",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": []
+    },
+    {
+        "id": 6787,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Meloidogyne incognita",
+        "commonNames": "Nematoide das galhas.",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": []
+    },
+    {
+        "id": 7618,
+        "classification": "Doença",
+        "culture": "Milho",
+        "scientificName": "Stenocapella macrospora",
+        "commonNames": "Podridão do milho",
+        "author": "",
+        "description": "",
+        "symptoms": "",
+        "bioecology": "",
+        "control": "",
+        "fungicides": []
+    }
+]
