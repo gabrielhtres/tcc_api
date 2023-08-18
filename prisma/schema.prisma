@@ -163,20 +163,20 @@ model Status {
 }
 
 model DefaultDisease {
-  id                      Int                       @id @db.Integer
-  classification          String
-  culture                 String
-  scientificName          String                    @map("scientific_name")
-  commonNames             String                    @map("common_names")
-  author                  String
-  description             String
-  symptoms                String
-  bioecology              String
-  control                 String
+  id             Int                       @id @db.Integer
+  classification String
+  culture        String
+  scientificName String                    @map("scientific_name")
+  commonNames    String                    @map("common_names")
+  author         String
+  description    String
+  symptoms       String
+  bioecology     String
+  control        String
   fungicides              DefaultFungicide[]
-  DefaultDiseaseFungicide DefaultDiseaseFungicide[]
-  createdAt               DateTime                  @default(now()) @map("created_at") @db.Timestamptz()
-  updatedAt               DateTime                  @updatedAt @map("updated_at") @db.Timestamptz()
+  // fungicides     DefaultDiseaseFungicide[]
+  createdAt      DateTime                  @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt      DateTime                  @updatedAt @map("updated_at") @db.Timestamptz()
 
   @@map("default_disease")
 }
@@ -195,21 +195,21 @@ model DefaultFungicide {
   packaging                String
   activeIngredients        Json                      @map("active_ingredients")
   diseases                 DefaultDisease[]
-  DefaultDiseaseFungicide  DefaultDiseaseFungicide[]
+  // diseases                 DefaultDiseaseFungicide[]
   createdAt                DateTime                  @default(now()) @map("created_at") @db.Timestamptz()
   updatedAt                DateTime                  @updatedAt @map("updated_at") @db.Timestamptz()
 
   @@map("default_fungicide")
 }
 
-model DefaultDiseaseFungicide {
-  id          Int              @id @default(autoincrement())
-  diseaseId   Int              @map("disease_id") @db.Integer
-  disease     DefaultDisease   @relation(fields: [diseaseId], references: [id])
-  fungicideId Int              @map("fungicide_id") @db.Integer
-  fungicide   DefaultFungicide @relation(fields: [fungicideId], references: [id])
-  createdAt   DateTime         @default(now()) @map("created_at") @db.Timestamptz()
-  updatedAt   DateTime         @updatedAt @map("updated_at") @db.Timestamptz()
+// model DefaultDiseaseFungicide {
+//   diseaseId   Int              @map("disease_id") @db.Integer
+//   disease     DefaultDisease   @relation(fields: [diseaseId], references: [id])
+//   fungicideId Int              @map("fungicide_id") @db.Integer
+//   fungicide   DefaultFungicide @relation(fields: [fungicideId], references: [id])
+//   createdAt   DateTime         @default(now()) @map("created_at") @db.Timestamptz()
+//   updatedAt   DateTime         @updatedAt @map("updated_at") @db.Timestamptz()
 
-  @@map("default_disease_fungicide")
-}
+//   @@id([diseaseId, fungicideId])
+//   @@map("default_disease_fungicide")
+// }
