@@ -197,9 +197,9 @@ model DefaultFungicide {
   packaging                String
   activeIngredients        Json             @map("active_ingredients")
   diseases                 DefaultDisease[]
-  
-  createdAt                DateTime         @default(now()) @map("created_at") @db.Timestamptz()
-  updatedAt                DateTime         @updatedAt @map("updated_at") @db.Timestamptz()
+
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz()
 
   @@map("default_fungicide")
 }

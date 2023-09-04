@@ -7,7 +7,7 @@ const analysisController = new AnalysisController();
 const router = express.Router();
 
 router.get(
-    '/user',
+    '/list',
     authUser,
     analysisController.getByUserId.bind(analysisController)
 );
