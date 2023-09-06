@@ -17,6 +17,46 @@ export class UserController {
     //     return res.send(users).status(200);
     // }
 
+    async validateToken(req: Request, res: Response) {
+        const { token } = req.body;
+
+        if (!token) {
+            return res.status(401).json({ message: 'Token JWT ausente' }).end();
+        }
+
+        try {
+            const decoded = jwt.verify(
+                token,
+                process.env.JWT_SECRET as string
+            ) as User;
+
+            const user = await this.userRepository.getById(decoded.id);
+
+            if (!user || !user.id) {
+                return res
+                    .status(401)
+                    .json({ message: 'Token JWT inválido' })
+                    .end();
+            }
+
+            const isLogout = await redis.get(token);
+
+            if (isLogout) {
+                return res
+                    .status(401)
+                    .json({ message: 'Esse usuário já está deslogado' })
+                    .end();
+            }
+
+            return res.status(200).json({ message: 'Token válido' }).end();
+        } catch (error) {
+            return res
+                .status(401)
+                .json({ message: 'Token JWT inválido' })
+                .end();
+        }
+    }
+
     async login(req: Request, res: Response) {
         const { email, password } = req.body;
 
@@ -50,7 +90,20 @@ export class UserController {
 
         await this.userRepository.update(user.id, { refreshToken });
 
-        return res.status(200).json({ token, refreshToken }).end();
+        const { id, name, cpf, phone, email: userEmail } = user;
+
+        return res
+            .status(200)
+            .json({
+                id,
+                name,
+                cpf,
+                phone,
+                email: userEmail,
+                token,
+                refreshToken,
+            })
+            .end();
     }
 
     async refresh(req: Request, res: Response) {
@@ -100,9 +153,19 @@ export class UserController {
                 refreshToken: newRefreshToken,
             });
 
+            const { id, name, cpf, phone, email: userEmail } = user;
+
             return res
                 .status(200)
-                .json({ token: newToken, refreshToken: newRefreshToken })
+                .json({
+                    id,
+                    name,
+                    cpf,
+                    phone,
+                    email: userEmail,
+                    token: newToken,
+                    refreshToken: newRefreshToken,
+                })
                 .end();
         } catch (error) {
             console.log(error);

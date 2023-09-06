@@ -21,17 +21,25 @@ export class AnalysisRepository {
         });
     }
 
-    async getByUserId(id: number): Promise<Analysis[] | null> {
+    async getByUserId(id: number): Promise<Partial<Analysis>[] | null> {
         return await this.prisma.analysis.findMany({
             where: { userId: id },
-            include: {
-                status: {
-                    select: {
-                        id: true,
-                        name: true,
-                    },
-                },
+            select: {
+                id: true,
+                name: true,
+                statusId: true,
             },
+            orderBy: {
+                updatedAt: 'desc',
+            },
+            // include: {
+            //     status: {
+            //         select: {
+            //             id: true,
+            //             name: true,
+            //         },
+            //     },
+            // },
         });
     }
 

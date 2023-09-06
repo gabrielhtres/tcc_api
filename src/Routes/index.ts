@@ -13,6 +13,7 @@ router.get('/', (req: RequestWithToken, res: Response) => {
 
 router.post('/signup', userController.create.bind(userController));
 router.post('/signin', userController.login.bind(userController));
+router.post('/validate', userController.validateToken.bind(userController));
 
 router.use('/user', userRoutes);
 router.use('/analysis', analysisRoutes);

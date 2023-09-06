@@ -16,8 +16,7 @@ export class AnalysisController {
 
     async getById(req: Request, res: Response) {
         const { id } = req.params;
-        console.log('id q veio', id);
-        
+
         const analysis = await this.analysisRepository.getById(Number(id));
 
         return res.status(200).json(analysis).end();
@@ -36,8 +35,7 @@ export class AnalysisController {
     async create(req: Request, res: Response) {
         const { userId } = req.params;
         const { name, description, statusId } = req.body;
-        console.log(name, description, userId);
-        
+        console.log(name, description, userId, statusId);
 
         try {
             const analysis = await this.analysisRepository.create({
@@ -48,14 +46,16 @@ export class AnalysisController {
                         id: Number(userId),
                     },
                 },
-                status: {
-                    connect: {
-                        id: Number(statusId),
-                    },
-                },
+                status: statusId
+                    ? {
+                          connect: {
+                              id: Number(statusId),
+                          },
+                      }
+                    : undefined,
             });
 
-            console.log(analysis)
+            console.log('analysis criada', analysis);
 
             return res.status(201).json(analysis).end();
         } catch (error) {
