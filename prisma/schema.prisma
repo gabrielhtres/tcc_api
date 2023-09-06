@@ -30,7 +30,7 @@ model Analysis {
   name        String
   description String?
   status      Status   @relation(fields: [statusId], references: [id])
-  statusId    Int      @map("status_id") @db.Integer
+  statusId    Int      @default(1) @map("status_id") @db.Integer
   user        User     @relation(fields: [userId], references: [id])
   userId      Int      @map("user_id") @db.Integer
   plot        Plot[]
