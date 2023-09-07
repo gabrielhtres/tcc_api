@@ -38,6 +38,9 @@ function handleError(
             };
         }
 
+        console.log(error);
+        
+
         return {
             code: 500,
             message: 'Erro interno no servidor, tente novamente',

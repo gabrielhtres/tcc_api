@@ -18,43 +18,14 @@ export class UserController {
     // }
 
     async validateToken(req: Request, res: Response) {
-        const { token } = req.body;
+        const { userId } = req.params;
 
-        if (!token) {
-            return res.status(401).json({ message: 'Token JWT ausente' }).end();
+        if (!userId) {
+            return res.status(401).json({ message: 'Token JWT inválido' }).end();
         }
 
-        try {
-            const decoded = jwt.verify(
-                token,
-                process.env.JWT_SECRET as string
-            ) as User;
-
-            const user = await this.userRepository.getById(decoded.id);
-
-            if (!user || !user.id) {
-                return res
-                    .status(401)
-                    .json({ message: 'Token JWT inválido' })
-                    .end();
-            }
-
-            const isLogout = await redis.get(token);
-
-            if (isLogout) {
-                return res
-                    .status(401)
-                    .json({ message: 'Esse usuário já está deslogado' })
-                    .end();
-            }
-
-            return res.status(200).json({ message: 'Token válido' }).end();
-        } catch (error) {
-            return res
-                .status(401)
-                .json({ message: 'Token JWT inválido' })
-                .end();
-        }
+        return res.status(200).json({ message: 'Token válido' }).end();
+            
     }
 
     async login(req: Request, res: Response) {
