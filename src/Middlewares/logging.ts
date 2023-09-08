@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 const logging = async (req: Request, res: Response, next: NextFunction) => {
-    const specialRoutes = ['/signin', '/signup'];
+    const specialRoutes = ['/signin', '/signup', '/refresh'];
 
     res.on('finish', async () => {
         const { statusCode } = res;
