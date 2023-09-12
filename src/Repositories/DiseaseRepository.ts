@@ -17,20 +17,21 @@ export class DiseaseRepository {
             where: { id },
             include: {
                 status: true,
+                defaultDisease: true,
             },
         });
     }
 
-    async getByPlotId(id: number): Promise<Disease[] | null> {
+    async getByPhaseId(id: number): Promise<Partial<Disease>[] | null> {
         return await this.prisma.disease.findMany({
-            where: { plotId: id },
-            include: {
-                status: {
-                    select: {
-                        id: true,
-                        name: true,
-                    },
-                },
+            where: { phaseId: id },
+            select: {
+                id: true,
+                name: true,
+                statusId: true,
+            },
+            orderBy: {
+                updatedAt: 'desc',
             },
         });
     }

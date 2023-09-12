@@ -32,14 +32,6 @@ export class AnalysisRepository {
             orderBy: {
                 updatedAt: 'desc',
             },
-            // include: {
-            //     status: {
-            //         select: {
-            //             id: true,
-            //             name: true,
-            //         },
-            //     },
-            // },
         });
     }
 

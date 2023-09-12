@@ -1,38 +1,38 @@
 import express from 'express';
-import { PlotController } from '../Controllers/PlotController';
+import { PhaseController } from '../Controllers/PhaseController';
 import authUser from '../Middlewares/authUser';
 import validateId from '../Middlewares/validateId';
 
-const plotController = new PlotController();
+const phaseController = new PhaseController();
 const router = express.Router();
 
 router.get(
     '/list/:id',
     authUser,
-    plotController.getByAnalysisId.bind(plotController)
+    phaseController.getByPlotId.bind(phaseController)
 );
 
 router.get(
     '/:id',
     validateId,
     authUser,
-    plotController.getById.bind(plotController)
+    phaseController.getById.bind(phaseController)
 );
 
-router.post('/:id', authUser, plotController.create.bind(plotController));
+router.post('/:id', authUser, phaseController.create.bind(phaseController));
 
 router.put(
     '/:id',
     validateId,
     authUser,
-    plotController.update.bind(plotController)
+    phaseController.update.bind(phaseController)
 );
 
 router.delete(
     '/:id',
     validateId,
     authUser,
-    plotController.delete.bind(plotController)
+    phaseController.delete.bind(phaseController)
 );
 
 export default router;

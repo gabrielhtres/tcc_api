@@ -35,7 +35,6 @@ export class AnalysisController {
     async create(req: Request, res: Response) {
         const { userId } = req.params;
         const { name, description, statusId } = req.body;
-        console.log(name, description, userId, statusId);
 
         try {
             const analysis = await this.analysisRepository.create({

@@ -21,16 +21,16 @@ export class PhaseRepository {
         });
     }
 
-    async getByDiseaseId(id: number): Promise<Phase[] | null> {
+    async getByPlotId(id: number): Promise<Partial<Phase>[] | null> {
         return await this.prisma.phase.findMany({
-            where: { diseaseId: id },
-            include: {
-                status: {
-                    select: {
-                        id: true,
-                        name: true,
-                    },
-                },
+            where: { plotId: id },
+            select: {
+                id: true,
+                name: true,
+                statusId: true,
+            },
+            orderBy: {
+                updatedAt: 'desc',
             },
         });
     }

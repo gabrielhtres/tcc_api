@@ -22,25 +22,25 @@ export class PlotController {
         return res.status(200).json(plot).end();
     }
 
-    async getByPlotId(req: Request, res: Response) {
+    async getByAnalysisId(req: Request, res: Response) {
         const { id } = req.params;
 
-        const plot = await this.plotRepository.getByPlotId(Number(id));
+        const plot = await this.plotRepository.getByAnalysisId(Number(id));
 
         return res.status(200).json(plot).end();
     }
 
     async create(req: Request, res: Response) {
         const { id } = req.params;
-        const { name, description, statusId } = req.body;
-        // console.log(name, description, analysisId, statusId);
+        const { name, description, xCoordinate, yCoordinate, statusId } =
+            req.body;
 
         try {
             const plot = await this.plotRepository.create({
                 name,
                 description,
-                xCoordinate: 0,
-                yCoordinate: 0,
+                xCoordinate,
+                yCoordinate,
                 analysis: {
                     connect: {
                         id: Number(id),
@@ -54,8 +54,6 @@ export class PlotController {
                       }
                     : undefined,
             });
-
-            console.log('plot criado', plot);
 
             return res.status(201).json(plot).end();
         } catch (error) {

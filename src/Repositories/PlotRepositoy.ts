@@ -21,14 +21,16 @@ export class PlotRepository {
         });
     }
 
-    async getByPlotId(id: number): Promise<Partial<Plot>[] | null> {
-        console.log('id q veio', id);
+    async getByAnalysisId(id: number): Promise<Partial<Plot>[] | null> {
         return await this.prisma.plot.findMany({
             where: { analysisId: id },
             select: {
                 id: true,
                 name: true,
                 statusId: true,
+            },
+            orderBy: {
+                updatedAt: 'desc',
             },
         });
     }

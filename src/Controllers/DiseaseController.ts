@@ -1,49 +1,68 @@
-import { Prisma, PrismaClient, User } from '@prisma/client';
-import { DiseaseRepository } from '../Repositories/DiseaseRepository';
+import { Prisma } from '@prisma/client';
 import { Request, Response } from 'express';
 import handleError from '../Utils/handleError';
+import { DiseaseRepository } from '../Repositories/DiseaseRepository';
+import { DefaultDiseaseRepository } from '../Repositories/DefaultDiseaseRepository';
 export class DiseaseController {
     private diseaseRepository: DiseaseRepository;
+    private defaultDiseaseRepository: DefaultDiseaseRepository;
 
     constructor() {
         this.diseaseRepository = new DiseaseRepository();
+        this.defaultDiseaseRepository = new DefaultDiseaseRepository();
+    }
+
+    // async getAll(req: Request, res: Response) {
+    //     const users = await this.userRepository.getAll();
+    //     return res.send(users).status(200);
+    // }
+
+    async getSelectList(req: Request, res: Response) {
+        const diseases = await this.defaultDiseaseRepository.getAll();
+
+        return res.status(200).json(diseases).end();
     }
 
     async getById(req: Request, res: Response) {
         const { id } = req.params;
+
         const disease = await this.diseaseRepository.getById(Number(id));
 
         return res.status(200).json(disease).end();
     }
 
-    async getByAnalysisId(req: Request, res: Response) {
-        const { analysisId } = req.params;
+    async getByPhaseId(req: Request, res: Response) {
+        const { id } = req.params;
 
-        const disease = await this.diseaseRepository.getByPlotId(
-            Number(analysisId)
-        );
+        const disease = await this.diseaseRepository.getByPhaseId(Number(id));
 
         return res.status(200).json(disease).end();
     }
 
     async create(req: Request, res: Response) {
-        const { analysisId } = req.params;
-        const { name, description, statusId } = req.body;
+        const { id } = req.params;
+        const { name, statusId, defaultDiseaseId } = req.body;
 
         try {
             const disease = await this.diseaseRepository.create({
                 name,
-                description,
-                user: {
+                phase: {
                     connect: {
-                        id: Number(analysisId),
+                        id: Number(id),
                     },
                 },
-                status: {
+                defaultDisease: {
                     connect: {
-                        id: statusId ? Number(statusId) : 1,
+                        id: Number(defaultDiseaseId),
                     },
                 },
+                status: statusId
+                    ? {
+                          connect: {
+                              id: Number(statusId),
+                          },
+                      }
+                    : undefined,
             });
 
             return res.status(201).json(disease).end();
@@ -59,10 +78,14 @@ export class DiseaseController {
     async update(req: Request, res: Response) {
         try {
             const { id } = req.params;
-            const { name, description, statusId } = req.body;
+            const { name, statusId, defaultDiseaseId } = req.body;
             const disease = await this.diseaseRepository.update(Number(id), {
                 name,
-                description,
+                defaultDisease: {
+                    connect: {
+                        id: Number(defaultDiseaseId),
+                    },
+                },
                 status: {
                     connect: {
                         id: Number(statusId),

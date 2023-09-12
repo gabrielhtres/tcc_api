@@ -2,6 +2,8 @@ import express, { Request, Response } from 'express';
 import userRoutes from './UserRoutes';
 import analysisRoutes from './AnalysisRoutes';
 import plotRoutes from './PlotRoutes';
+import phaseRoutes from './PhaseRoutes';
+import diseaseRoutes from './DiseaseRoutes';
 import { RequestWithToken } from '../Utils/types';
 import { UserController } from '../Controllers/UserController';
 import authUser from '../Middlewares/authUser';
@@ -24,5 +26,7 @@ router.post(
 router.use('/user', userRoutes);
 router.use('/analysis', analysisRoutes);
 router.use('/plot', plotRoutes);
+router.use('/phase', phaseRoutes);
+router.use('/disease', diseaseRoutes);
 
 export default router;
