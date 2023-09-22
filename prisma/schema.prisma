@@ -58,59 +58,59 @@ model Plot {
 }
 
 model Phase {
-  id           Int          @id @default(autoincrement()) @db.Integer
-  name         String
-  plot         Plot         @relation(fields: [plotId], references: [id])
-  plotId       Int          @map("disease_id") @db.Integer
-  images       PhaseImage[]
-  hasIncidence Boolean      @map("has_incidence")
-  percentage   Int?         @db.Integer
-  date         DateTime     @default(now()) @db.Date
-  meteorology  String
-  status       Status       @relation(fields: [statusId], references: [id])
-  statusId     Int          @default(1) @map("status_id") @db.Integer
-  diseases     Disease[]
+  id        Int       @id @default(autoincrement()) @db.Integer
+  name      String
+  plot      Plot      @relation(fields: [plotId], references: [id])
+  plotId    Int       @map("disease_id") @db.Integer
+  status    Status    @relation(fields: [statusId], references: [id])
+  statusId  Int       @default(1) @map("status_id") @db.Integer
+  diseases  Disease[]
   // fungicide    Fungicide    @relation(fields: [fungicideId], references: [id])
   // fungicideId  Int          @map("fungicide_id") @db.Integer
-  createdAt    DateTime     @default(now()) @map("created_at") @db.Timestamptz()
-  updatedAt    DateTime     @updatedAt @map("updated_at") @db.Timestamptz()
+  createdAt DateTime  @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt DateTime  @updatedAt @map("updated_at") @db.Timestamptz()
 
   @@map("phase")
 }
 
 model Disease {
-  id                 Int               @id @default(autoincrement()) @db.Integer
-  name               String
-  status             Status            @relation(fields: [statusId], references: [id])
-  statusId           Int               @default(1) @map("status_id") @db.Integer
-  phase              Phase             @relation(fields: [phaseId], references: [id])
-  phaseId            Int               @map("plot_id") @db.Integer
-  defaultDisease     DefaultDisease    @relation(fields: [defaultDiseaseId], references: [id])
-  defaultDiseaseId   Int               @map("default_disease_id") @db.Integer
-  defaultFungicide   DefaultFungicide? @relation(fields: [defaultFungicideId], references: [id])
-  defaultFungicideId Int?              @map("default_fungicide_id") @db.Integer
-  createdAt          DateTime          @default(now()) @map("created_at") @db.Timestamptz()
-  updatedAt          DateTime          @updatedAt @map("updated_at") @db.Timestamptz()
+  id               Int            @id @default(autoincrement()) @db.Integer
+  hasIncidence     Boolean?       @map("has_incidence")
+  percentage       Int?           @db.Integer
+  meteorology      String?
+  images           DiseaseImage[]
+  status           Status         @relation(fields: [statusId], references: [id])
+  statusId         Int            @default(1) @map("status_id") @db.Integer
+  phase            Phase          @relation(fields: [phaseId], references: [id])
+  phaseId          Int            @map("plot_id") @db.Integer
+  defaultDisease   DefaultDisease @relation(fields: [defaultDiseaseId], references: [id])
+  defaultDiseaseId Int            @map("default_disease_id") @db.Integer
+  fungicides       Fungicide[]
+  createdAt        DateTime       @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt        DateTime       @updatedAt @map("updated_at") @db.Timestamptz()
 
   @@map("disease")
 }
 
-// model Fungicide {
-//   id          Int      @id @default(autoincrement()) @db.Integer
-//   name        String
-//   description String?
-//   Phase       Phase[]
-//   createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz()
-//   updatedAt   DateTime @updatedAt @map("updated_at") @db.Timestamptz()
+model Fungicide {
+  id                 Int              @id @default(autoincrement()) @db.Integer
+  disease            Disease          @relation(fields: [diseaseId], references: [id])
+  diseaseId          Int              @map("disease_id") @db.Integer
+  status             Status           @relation(fields: [statusId], references: [id])
+  statusId           Int              @default(1) @map("status_id") @db.Integer
+  defaultFungicide   DefaultFungicide @relation(fields: [defaultFungicideId], references: [id])
+  defaultFungicideId Int              @map("default_disease_id") @db.Integer
+  createdAt          DateTime         @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt          DateTime         @updatedAt @map("updated_at") @db.Timestamptz()
 
-//   @@map("fungicide")
-// }
+  @@map("fungicide")
+}
 
-model PhaseImage {
+model DiseaseImage {
   id        Int      @id @default(autoincrement()) @db.Integer
   link      String
-  phase     Phase    @relation(fields: [phaseId], references: [id])
-  phaseId   Int      @map("phase_id") @db.Integer
+  disease   Disease  @relation(fields: [diseaseId], references: [id])
+  diseaseId Int      @map("disease_id") @db.Integer
   createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz()
   updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz()
 
@@ -154,14 +154,15 @@ model Log {
 }
 
 model Status {
-  id        Int        @id @db.Integer
-  name      String
-  diseases  Disease[]
-  plots     Plot[]
-  analyzes  Analysis[]
-  phases    Phase[]
-  createdAt DateTime   @default(now()) @map("created_at") @db.Timestamptz()
-  updatedAt DateTime   @updatedAt @map("updated_at") @db.Timestamptz()
+  id         Int         @id @db.Integer
+  name       String
+  diseases   Disease[]
+  plots      Plot[]
+  analyzes   Analysis[]
+  phases     Phase[]
+  fungicides Fungicide[]
+  createdAt  DateTime    @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt  DateTime    @updatedAt @map("updated_at") @db.Timestamptz()
 
   @@map("status")
 }
@@ -199,7 +200,7 @@ model DefaultFungicide {
   packaging                String
   activeIngredients        Json             @map("active_ingredients")
   defaultDiseases          DefaultDisease[]
-  diseases                 Disease[]
+  fungicides               Fungicide[]
   createdAt                DateTime         @default(now()) @map("created_at") @db.Timestamptz()
   updatedAt                DateTime         @updatedAt @map("updated_at") @db.Timestamptz()
 

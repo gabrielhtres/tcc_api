@@ -1,12 +1,13 @@
-import express, { Request, Response } from 'express';
+import express, { Response } from 'express';
 import userRoutes from './UserRoutes';
 import analysisRoutes from './AnalysisRoutes';
 import plotRoutes from './PlotRoutes';
 import phaseRoutes from './PhaseRoutes';
 import diseaseRoutes from './DiseaseRoutes';
+import fungicideRoutes from './FungicideRoutes';
+import authUser from '../Middlewares/authUser';
 import { RequestWithToken } from '../Utils/types';
 import { UserController } from '../Controllers/UserController';
-import authUser from '../Middlewares/authUser';
 
 const router = express.Router();
 const userController = new UserController();
@@ -28,5 +29,6 @@ router.use('/analysis', analysisRoutes);
 router.use('/plot', plotRoutes);
 router.use('/phase', phaseRoutes);
 router.use('/disease', diseaseRoutes);
+router.use('/fungicide', fungicideRoutes);
 
 export default router;

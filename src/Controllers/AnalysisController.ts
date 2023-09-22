@@ -2,17 +2,13 @@ import { Prisma, PrismaClient, User } from '@prisma/client';
 import { AnalysisRepository } from '../Repositories/AnalysisRepository';
 import { Request, Response } from 'express';
 import handleError from '../Utils/handleError';
+
 export class AnalysisController {
     private analysisRepository: AnalysisRepository;
 
     constructor() {
         this.analysisRepository = new AnalysisRepository();
     }
-
-    // async getAll(req: Request, res: Response) {
-    //     const users = await this.userRepository.getAll();
-    //     return res.send(users).status(200);
-    // }
 
     async getById(req: Request, res: Response) {
         const { id } = req.params;
@@ -53,8 +49,6 @@ export class AnalysisController {
                       }
                     : undefined,
             });
-
-            console.log('analysis criada', analysis);
 
             return res.status(201).json(analysis).end();
         } catch (error) {

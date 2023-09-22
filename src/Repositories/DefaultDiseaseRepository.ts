@@ -9,11 +9,14 @@ export class DefaultDiseaseRepository {
 
     async getAll(): Promise<Partial<DefaultDisease>[]> {
         const diseases = await this.prisma.defaultDisease.findMany({
-            select: {
-                id: true,
-                scientificName: true,
-                commonNames: true,
+            orderBy: {
+                commonNames: 'asc',
             },
+            // select: {
+            //     id: true,
+            //     scientificName: true,
+            //     commonNames: true,
+            // },
         });
         return diseases;
     }

@@ -27,7 +27,12 @@ export class DiseaseRepository {
             where: { phaseId: id },
             select: {
                 id: true,
-                name: true,
+                defaultDisease: {
+                    select: {
+                        id: true,
+                        commonNames: true,
+                    },
+                },
                 statusId: true,
             },
             orderBy: {

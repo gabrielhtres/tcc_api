@@ -12,20 +12,17 @@ export class UserController {
         this.userRepository = new UserRepository();
     }
 
-    // async getAll(req: Request, res: Response) {
-    //     const users = await this.userRepository.getAll();
-    //     return res.send(users).status(200);
-    // }
-
     async validateToken(req: Request, res: Response) {
         const { userId } = req.params;
 
         if (!userId) {
-            return res.status(401).json({ message: 'Token JWT inválido' }).end();
+            return res
+                .status(401)
+                .json({ message: 'Token JWT inválido' })
+                .end();
         }
 
         return res.status(200).json({ message: 'Token válido' }).end();
-            
     }
 
     async login(req: Request, res: Response) {

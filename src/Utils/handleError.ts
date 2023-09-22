@@ -39,7 +39,6 @@ function handleError(
         }
 
         console.log(error);
-        
 
         return {
             code: 500,
@@ -55,6 +54,7 @@ function handleError(
     }
 
     if (error instanceof PrismaClientValidationError) {
+        console.log(error.message);
         return {
             code: 400,
             message: `O campo ${

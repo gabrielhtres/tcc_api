@@ -12,11 +12,6 @@ export class DiseaseController {
         this.defaultDiseaseRepository = new DefaultDiseaseRepository();
     }
 
-    // async getAll(req: Request, res: Response) {
-    //     const users = await this.userRepository.getAll();
-    //     return res.send(users).status(200);
-    // }
-
     async getSelectList(req: Request, res: Response) {
         const diseases = await this.defaultDiseaseRepository.getAll();
 
@@ -41,11 +36,13 @@ export class DiseaseController {
 
     async create(req: Request, res: Response) {
         const { id } = req.params;
-        const { name, statusId, defaultDiseaseId } = req.body;
+        const { hasIncidence, percentage, statusId, defaultDiseaseId } =
+            req.body;
 
         try {
             const disease = await this.diseaseRepository.create({
-                name,
+                hasIncidence,
+                percentage,
                 phase: {
                     connect: {
                         id: Number(id),
@@ -78,9 +75,21 @@ export class DiseaseController {
     async update(req: Request, res: Response) {
         try {
             const { id } = req.params;
-            const { name, statusId, defaultDiseaseId } = req.body;
+            console.log('id do params', id);
+
+            const {
+                statusId,
+                defaultDiseaseId,
+                hasIncidence,
+                meteorology,
+                percentage,
+            } = req.body;
+
+            console.log('body', req.body);
             const disease = await this.diseaseRepository.update(Number(id), {
-                name,
+                percentage,
+                hasIncidence,
+                meteorology,
                 defaultDisease: {
                     connect: {
                         id: Number(defaultDiseaseId),

@@ -9,11 +9,6 @@ export class PlotController {
         this.plotRepository = new PlotRepository();
     }
 
-    // async getAll(req: Request, res: Response) {
-    //     const users = await this.userRepository.getAll();
-    //     return res.send(users).status(200);
-    // }
-
     async getById(req: Request, res: Response) {
         const { id } = req.params;
 
