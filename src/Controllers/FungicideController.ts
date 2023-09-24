@@ -27,7 +27,9 @@ export class FungicideController {
     async getById(req: Request, res: Response) {
         const { id } = req.params;
 
-        const fungicide = await this.fungicideRepository.getById(Number(id));
+        const fungicide = await this.defaultFungicideRepository.getById(
+            Number(id)
+        );
 
         return res.status(200).json(fungicide).end();
     }
