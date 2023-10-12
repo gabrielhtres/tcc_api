@@ -1,7 +1,8 @@
 import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
+import redis from '../Config/Redis';
 
-function authUser(req: Request, res: Response, next: NextFunction) {
+async function authUser(req: Request, res: Response, next: NextFunction) {
     try {
         const token = req.headers.authorization?.split(' ')[1];
 
@@ -15,6 +16,15 @@ function authUser(req: Request, res: Response, next: NextFunction) {
             return res
                 .status(401)
                 .json({ message: 'Token JWT inválido' })
+                .end();
+        }
+
+        const isLogout = await redis.get(token);
+
+        if (isLogout) {
+            return res
+                .status(401)
+                .json({ message: 'Esse usuário já está deslogado' })
                 .end();
         }
 
