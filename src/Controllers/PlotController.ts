@@ -1,103 +1,103 @@
 import { Prisma, PrismaClient, User } from '@prisma/client';
 import { Request, Response } from 'express';
 import handleError from '../Utils/handleError';
-import { PlotRepository } from '../Repositories/PlotRepositoy';
+import { PlotRepository } from '../Repositories/PlotRepository';
 export class PlotController {
-    private plotRepository: PlotRepository;
+	private plotRepository: PlotRepository;
 
-    constructor() {
-        this.plotRepository = new PlotRepository();
-    }
+	constructor() {
+		this.plotRepository = new PlotRepository();
+	}
 
-    async getById(req: Request, res: Response) {
-        const { id } = req.params;
+	async getById(req: Request, res: Response) {
+		const { id } = req.params;
 
-        const plot = await this.plotRepository.getById(Number(id));
+		const plot = await this.plotRepository.getById(Number(id));
 
-        return res.status(200).json(plot).end();
-    }
+		return res.status(200).json(plot).end();
+	}
 
-    async getByAnalysisId(req: Request, res: Response) {
-        const { id } = req.params;
+	async getByAnalysisId(req: Request, res: Response) {
+		const { id } = req.params;
 
-        const plot = await this.plotRepository.getByAnalysisId(Number(id));
+		const plot = await this.plotRepository.getByAnalysisId(Number(id));
 
-        return res.status(200).json(plot).end();
-    }
+		return res.status(200).json(plot).end();
+	}
 
-    async create(req: Request, res: Response) {
-        const { id } = req.params;
-        const { name, description, xCoordinate, yCoordinate, statusId } =
-            req.body;
+	async create(req: Request, res: Response) {
+		const { id } = req.params;
+		const { name, description, xCoordinate, yCoordinate, statusId } =
+			req.body;
 
-        try {
-            const plot = await this.plotRepository.create({
-                name,
-                description,
-                xCoordinate,
-                yCoordinate,
-                analysis: {
-                    connect: {
-                        id: Number(id),
-                    },
-                },
-                status: statusId
-                    ? {
-                          connect: {
-                              id: Number(statusId),
-                          },
-                      }
-                    : undefined,
-            });
+		try {
+			const plot = await this.plotRepository.create({
+				name,
+				description,
+				xCoordinate,
+				yCoordinate,
+				analysis: {
+					connect: {
+						id: Number(id),
+					},
+				},
+				status: statusId
+					? {
+							connect: {
+								id: Number(statusId),
+							},
+					  }
+					: undefined,
+			});
 
-            return res.status(201).json(plot).end();
-        } catch (error) {
-            const { code, message } = handleError(
-                error as Prisma.PrismaClientKnownRequestError
-            );
+			return res.status(201).json(plot).end();
+		} catch (error) {
+			const { code, message } = handleError(
+				error as Prisma.PrismaClientKnownRequestError,
+			);
 
-            return res.status(code).json({ message }).end();
-        }
-    }
+			return res.status(code).json({ message }).end();
+		}
+	}
 
-    async update(req: Request, res: Response) {
-        try {
-            const { id } = req.params;
-            const { name, description, xCoordinate, yCoordinate, statusId } =
-                req.body;
-            const plot = await this.plotRepository.update(Number(id), {
-                name,
-                description,
-                xCoordinate,
-                yCoordinate,
-                status: {
-                    connect: {
-                        id: Number(statusId),
-                    },
-                },
-            });
-            return res.status(200).json(plot).end();
-        } catch (error) {
-            const { code, message } = handleError(
-                error as Prisma.PrismaClientKnownRequestError
-            );
+	async update(req: Request, res: Response) {
+		try {
+			const { id } = req.params;
+			const { name, description, xCoordinate, yCoordinate, statusId } =
+				req.body;
+			const plot = await this.plotRepository.update(Number(id), {
+				name,
+				description,
+				xCoordinate,
+				yCoordinate,
+				status: {
+					connect: {
+						id: Number(statusId),
+					},
+				},
+			});
+			return res.status(200).json(plot).end();
+		} catch (error) {
+			const { code, message } = handleError(
+				error as Prisma.PrismaClientKnownRequestError,
+			);
 
-            return res.status(code).json({ message }).end();
-        }
-    }
+			return res.status(code).json({ message }).end();
+		}
+	}
 
-    async delete(req: Request, res: Response) {
-        const { id } = req.params;
+	async delete(req: Request, res: Response) {
+		const { id } = req.params;
 
-        try {
-            const plot = await this.plotRepository.delete(Number(id));
-            return res.status(200).json(plot).end();
-        } catch (error) {
-            const { code, message } = handleError(
-                error as Prisma.PrismaClientKnownRequestError
-            );
+		try {
+			const plot = await this.plotRepository.delete(Number(id));
+			return res.status(200).json(plot).end();
+		} catch (error) {
+			const { code, message } = handleError(
+				error as Prisma.PrismaClientKnownRequestError,
+			);
 
-            return res.status(code).json({ message }).end();
-        }
-    }
+			return res.status(code).json({ message }).end();
+		}
+	}
 }
