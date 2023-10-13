@@ -122,10 +122,22 @@ model Scale {
   name        String
   description String?
   images      ScaleImage[]
+  parts       ScalePart[]
   createdAt   DateTime     @default(now()) @map("created_at") @db.Timestamptz()
   updatedAt   DateTime     @updatedAt @map("updated_at") @db.Timestamptz()
 
   @@map("scale")
+}
+
+model ScalePart {
+  id         Int      @id @default(autoincrement()) @db.Integer
+  percentage Int      @db.Integer
+  scale      Scale    @relation(fields: [scaleId], references: [id])
+  scaleId    Int      @map("scale_id") @db.Integer
+  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt  DateTime @updatedAt @map("updated_at") @db.Timestamptz()
+
+  @@map("scale_phase")
 }
 
 model ScaleImage {
