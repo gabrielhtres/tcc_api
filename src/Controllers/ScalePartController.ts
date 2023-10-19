@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import handleError from '../Utils/handleError';
 import { ScalePartRepository } from '../Repositories/ScalePartRepository';
 
-export class ScaleController {
+export class ScalePartController {
 	private scalePartRepository: ScalePartRepository;
 
 	constructor() {
@@ -30,11 +30,12 @@ export class ScaleController {
 
 	async create(req: Request, res: Response) {
 		const { id } = req.params;
-		const { percentage } = req.body;
+		const { name, percentage } = req.body;
 
 		try {
 			const scalePart = await this.scalePartRepository.create({
-				percentage,
+				name,
+				percentage: Number(percentage),
 				scale: {
 					connect: {
 						id: Number(id),
@@ -55,11 +56,12 @@ export class ScaleController {
 	async update(req: Request, res: Response) {
 		try {
 			const { id } = req.params;
-			const { percentage } = req.body;
+			const { name, percentage } = req.body;
 			const scalePart = await this.scalePartRepository.update(
 				Number(id),
 				{
-					percentage,
+					percentage: Number(percentage),
+					name,
 				},
 			);
 			return res.status(200).json(scalePart).end();
