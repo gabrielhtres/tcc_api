@@ -131,6 +131,7 @@ model Scale {
 
 model ScalePart {
   id         Int      @id @default(autoincrement()) @db.Integer
+  name       String
   percentage Int      @db.Integer
   scale      Scale    @relation(fields: [scaleId], references: [id])
   scaleId    Int      @map("scale_id") @db.Integer

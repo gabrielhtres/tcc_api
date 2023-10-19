@@ -1,6 +1,7 @@
 -- CreateTable
 CREATE TABLE "scale_phase" (
     "id" SERIAL NOT NULL,
+    "name" TEXT NOT NULL,
     "percentage" INTEGER NOT NULL,
     "scale_id" INTEGER NOT NULL,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
