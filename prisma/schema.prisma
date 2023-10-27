@@ -133,6 +133,7 @@ model ScalePart {
   id         Int      @id @default(autoincrement()) @db.Integer
   name       String
   percentage Int      @db.Integer
+  image      String   @default("")
   scale      Scale    @relation(fields: [scaleId], references: [id])
   scaleId    Int      @map("scale_id") @db.Integer
   createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz()
