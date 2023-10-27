@@ -2,6 +2,8 @@ import { Prisma, PrismaClient, User } from '@prisma/client';
 import { Request, Response } from 'express';
 import handleError from '../Utils/handleError';
 import { ScalePartRepository } from '../Repositories/ScalePartRepository';
+import multer from 'multer';
+import path from 'path';
 
 export class ScalePartController {
 	private scalePartRepository: ScalePartRepository;
@@ -28,14 +30,19 @@ export class ScalePartController {
 		return res.status(200).json(scaleParts).end();
 	}
 
-	async create(req: Request, res: Response) {
+	async create(req: any, res: Response) {
 		const { id } = req.params;
 		const { name, percentage } = req.body;
 
+		console.log('req', name[0], percentage[0], req.file);
+
+		// console.log('veio aq', file, req.body);
+
 		try {
 			const scalePart = await this.scalePartRepository.create({
-				name,
-				percentage: Number(percentage),
+				name: name[0],
+				percentage: Number(percentage[0]),
+				image: req.file?.filename || '',
 				scale: {
 					connect: {
 						id: Number(id),
@@ -56,12 +63,13 @@ export class ScalePartController {
 	async update(req: Request, res: Response) {
 		try {
 			const { id } = req.params;
-			const { name, percentage } = req.body;
+			const { name, percentage, file } = req.body;
 			const scalePart = await this.scalePartRepository.update(
 				Number(id),
 				{
 					percentage: Number(percentage),
 					name,
+					image: file?.filename || '',
 				},
 			);
 			return res.status(200).json(scalePart).end();
