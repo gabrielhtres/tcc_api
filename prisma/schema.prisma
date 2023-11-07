@@ -78,7 +78,7 @@ model Disease {
   hasIncidence     Boolean?       @map("has_incidence")
   percentage       Int?           @db.Integer
   meteorology      String?
-  images           DiseaseImage[]
+  // images           DiseaseImage[]
   status           Status         @relation(fields: [statusId], references: [id])
   statusId         Int            @default(1) @map("status_id") @db.Integer
   phase            Phase          @relation(fields: [phaseId], references: [id])
@@ -106,25 +106,24 @@ model Fungicide {
   @@map("fungicide")
 }
 
-model DiseaseImage {
-  id        Int      @id @default(autoincrement()) @db.Integer
-  link      String
-  disease   Disease  @relation(fields: [diseaseId], references: [id])
-  diseaseId Int      @map("disease_id") @db.Integer
-  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz()
-  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz()
+// model DiseaseImage {
+//   id        Int      @id @default(autoincrement()) @db.Integer
+//   link      String
+//   disease   Disease  @relation(fields: [diseaseId], references: [id])
+//   diseaseId Int      @map("disease_id") @db.Integer
+//   createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz()
+//   updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz()
 
-  @@map("phase_image")
-}
+//   @@map("phase_image")
+// }
 
 model Scale {
-  id          Int          @id @default(autoincrement()) @db.Integer
+  id          Int         @id @default(autoincrement()) @db.Integer
   name        String
   description String?
-  images      ScaleImage[]
   parts       ScalePart[]
-  createdAt   DateTime     @default(now()) @map("created_at") @db.Timestamptz()
-  updatedAt   DateTime     @updatedAt @map("updated_at") @db.Timestamptz()
+  createdAt   DateTime    @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt   DateTime    @updatedAt @map("updated_at") @db.Timestamptz()
 
   @@map("scale")
 }
@@ -139,20 +138,20 @@ model ScalePart {
   createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz()
   updatedAt  DateTime @updatedAt @map("updated_at") @db.Timestamptz()
 
-  @@map("scale_phase")
+  @@map("scale_part")
 }
 
-model ScaleImage {
-  id         Int      @id @default(autoincrement()) @db.Integer
-  link       String
-  percentage Int      @db.Integer
-  scale      Scale    @relation(fields: [scaleId], references: [id])
-  scaleId    Int      @map("scale_id") @db.Integer
-  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz()
-  updatedAt  DateTime @updatedAt @map("updated_at") @db.Timestamptz()
+// model ScaleImage {
+//   id         Int      @id @default(autoincrement()) @db.Integer
+//   link       String
+//   percentage Int      @db.Integer
+//   scale      Scale    @relation(fields: [scaleId], references: [id])
+//   scaleId    Int      @map("scale_id") @db.Integer
+//   createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz()
+//   updatedAt  DateTime @updatedAt @map("updated_at") @db.Timestamptz()
 
-  @@map("scale_image")
-}
+//   @@map("scale_image")
+// }
 
 model Log {
   id         Int      @id @default(autoincrement()) @db.Integer
