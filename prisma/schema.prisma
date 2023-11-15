@@ -44,8 +44,8 @@ model Plot {
   id          Int      @id @default(autoincrement()) @db.Integer
   name        String
   description String?
-  xCoordinate Float    @map("x_coordinate") @db.DoublePrecision
-  yCoordinate Float    @map("y_coordinate") @db.DoublePrecision
+  xCoordinate String   @map("x_coordinate")
+  yCoordinate String   @map("y_coordinate")
   status      Status   @relation(fields: [statusId], references: [id])
   statusId    Int      @default(1) @map("status_id") @db.Integer
   analysis    Analysis @relation(fields: [analysisId], references: [id])
@@ -131,7 +131,7 @@ model Scale {
 model ScalePart {
   id         Int      @id @default(autoincrement()) @db.Integer
   name       String
-  percentage Int      @db.Integer
+  percentage Decimal  @db.Decimal()
   image      String   @default("")
   scale      Scale    @relation(fields: [scaleId], references: [id])
   scaleId    Int      @map("scale_id") @db.Integer
