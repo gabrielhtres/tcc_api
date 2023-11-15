@@ -4,38 +4,38 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 const logging = async (req: Request, res: Response, next: NextFunction) => {
-    const specialRoutes = ['/signin', '/signup', '/refresh'];
+	const specialRoutes = ['/signin', '/signup', '/refresh', '/file'];
 
-    res.on('finish', async () => {
-        const { statusCode } = res;
-        const {
-            params: { userId },
-            method,
-            originalUrl,
-            body,
-        } = req;
+	res.on('finish', async () => {
+		const { statusCode } = res;
+		const {
+			params: { userId },
+			method,
+			originalUrl,
+			body,
+		} = req;
 
-        const payload = JSON.stringify(body || {});
+		const payload = JSON.stringify(body || {});
 
-        await prisma.log.create({
-            data: {
-                method,
-                statusCode,
-                payload,
-                route: originalUrl,
-                user:
-                    !specialRoutes.includes(originalUrl) && userId
-                        ? {
-                              connect: {
-                                  id: Number(userId),
-                              },
-                          }
-                        : undefined,
-            },
-        });
-    });
+		await prisma.log.create({
+			data: {
+				method,
+				statusCode,
+				payload,
+				route: originalUrl,
+				user:
+					!specialRoutes.includes(originalUrl) && userId
+						? {
+								connect: {
+									id: Number(userId),
+								},
+						  }
+						: undefined,
+			},
+		});
+	});
 
-    next();
+	next();
 };
 
 export default logging;

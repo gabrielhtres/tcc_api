@@ -27,6 +27,8 @@ export class ScalePartController {
 			Number(id),
 		);
 
+		scaleParts?.sort((a, b) => a.percentage.comparedTo(b.percentage));
+
 		return res.status(200).json(scaleParts).end();
 	}
 
@@ -67,11 +69,12 @@ export class ScalePartController {
 			const scalePart = await this.scalePartRepository.update(
 				Number(id),
 				{
-					percentage: Number(percentage),
-					name,
-					image: file?.filename || '',
+					percentage: Number(percentage[0]),
+					name: name[0],
+					image: req.file?.filename || '',
 				},
 			);
+
 			return res.status(200).json(scalePart).end();
 		} catch (error) {
 			const { code, message } = handleError(
