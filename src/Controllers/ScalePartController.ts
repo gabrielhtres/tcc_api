@@ -34,17 +34,13 @@ export class ScalePartController {
 
 	async create(req: any, res: Response) {
 		const { id } = req.params;
-		const { name, percentage } = req.body;
-
-		console.log('req', name[0], percentage[0], req.file);
-
-		// console.log('veio aq', file, req.body);
+		const { name, percentage, image } = req.body;
 
 		try {
 			const scalePart = await this.scalePartRepository.create({
-				name: name[0],
-				percentage: Number(percentage[0]),
-				image: req.file?.filename || '',
+				name: name,
+				percentage: Number(percentage),
+				image: image,
 				scale: {
 					connect: {
 						id: Number(id),
@@ -65,13 +61,13 @@ export class ScalePartController {
 	async update(req: Request, res: Response) {
 		try {
 			const { id } = req.params;
-			const { name, percentage, file } = req.body;
+			const { name, percentage, image } = req.body;
 			const scalePart = await this.scalePartRepository.update(
 				Number(id),
 				{
-					percentage: Number(percentage[0]),
-					name: name[0],
-					image: req.file?.filename || '',
+					percentage: Number(percentage),
+					name: name,
+					image: image,
 				},
 			);
 
